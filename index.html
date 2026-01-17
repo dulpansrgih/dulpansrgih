@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulpan Adi Saragih - Portfolio</title>
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'jet': 'hsl(0, 0%, 22%)',
+            'onyx': 'hsl(240, 1%, 17%)',
+            'eerie-black-2': 'hsl(240, 2%, 12%)',
+            'smoky-black': 'hsl(0, 0%, 7%)',
+            'white-2': 'hsl(0, 0%, 98%)',
+            'orange-yellow-crayola': 'hsl(45, 100%, 72%)',
+            'vegas-gold': 'hsl(45, 54%, 58%)',
+            'light-gray': 'hsl(0, 0%, 84%)',
+            'light-gray-70': 'hsla(0, 0%, 84%, 0.7)',
+          },
+          fontFamily: { 'poppins': ['Poppins', 'sans-serif'] },
+          backgroundImage: {
+            'gradient-onyx': 'linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%)',
+            'border-gradient-onyx': 'linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%)',
+            'text-gradient-yellow': 'linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%))',
+            'gradient-jet': 'linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%)',
+          },
+          boxShadow: { '1': '-4px 8px 24px hsla(0, 0%, 0%, 0.25)', '2': '0 16px 30px hsla(0, 0%, 0%, 0.25)' },
+          animation: { 
+            'fade': 'fade 0.5s ease backwards', 
+            'scaleUp': 'scaleUp 0.25s ease forwards', 
+            'blink': 'blink 1s infinite',
+            'slideUp': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards' 
+          },
+          keyframes: {
+            fade: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            scaleUp: { '0%': { transform: 'scale(0.5)' }, '100%': { transform: 'scale(1)' } },
+            blink: { '0%, 100%': { opacity: '.25' }, '50%': { opacity: '1' } },
+            slideUp: { '0%': { transform: 'translateY(100%)' }, '100%': { transform: 'translateY(0)' } }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body::-webkit-scrollbar { width: 20px; }
+    body::-webkit-scrollbar-track { background: hsl(0, 0%, 7%); }
+    body::-webkit-scrollbar-thumb { border: 5px solid hsl(0, 0%, 7%); background: hsla(0, 0%, 100%, 0.1); border-radius: 20px; }
+    body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+    
+    .sidebar.active { max-height: 584px; }
+    .sidebar.active .sidebar-info_more { opacity: 1; visibility: visible; }
+    
+    @media (min-width: 1250px) { 
+        .sidebar.active { max-height: max-content; } 
+    }
+    
+    .work-item::after {
+        content: ""; position: absolute; top: 5px; left: -33px; width: 30px; height: 30px;
+        background-image: var(--icon-image); background-size: contain; background-position: center;
+        background-repeat: no-repeat; transform: translateX(-37%); border-radius: 50%;
+    }
+
+    /* SCROLLBAR BAWAAN */
+    .has-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+    .has-scrollbar::-webkit-scrollbar-track { background: hsl(240, 1%, 17%); border-radius: 5px; }
+    .has-scrollbar::-webkit-scrollbar-thumb { background: hsl(45, 100%, 72%); border-radius: 5px; }
+    
+    /* ANIMASI DROPPING TEXT (12.5s Total) */
+    .dropping-texts > div:nth-child(1) { animation: roll 12.5s linear infinite 0s; }
+    .dropping-texts > div:nth-child(2) { animation: roll 12.5s linear infinite 2.5s; }
+    .dropping-texts > div:nth-child(3) { animation: roll 12.5s linear infinite 5s; }
+    .dropping-texts > div:nth-child(4) { animation: roll 12.5s linear infinite 7.5s; }
+    .dropping-texts > div:nth-child(5) { animation: roll 12.5s linear infinite 10s; }
+    
+    @keyframes roll {
+      0% { font-size: 0px; opacity: 0; margin-left: -20px; margin-top: 0px; transform: rotate(-15deg); }
+      5% { opacity: 1; transform: rotate(0deg); }
+      6% { font-size: inherit; opacity: 1; margin-left: 0px; margin-top: 0px; }
+      20% { font-size: inherit; opacity: 1; margin-left: 0px; margin-top: 0px; transform: rotate(0deg); }
+      25% { font-size: 0px; opacity: 0; margin-left: 10px; margin-top: 10px; transform: rotate(10deg); }
+      100% { font-size: 0px; opacity: 0; margin-left: -20px; margin-top: 0px; transform: rotate(-15deg); }
+    }
+
+    /* GLOBAL FONT FIX 13px */
+    .main-content p, .main-content li, .main-content span:not(.material-icons), .timeline-text {
+        font-size: 13px !important; line-height: 1.7 !important;
+    }
+    .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5 { font-size: inherit !important; }
+    .navbar-link span { font-size: inherit !important; }
+  </style>
+</head>
+
+<body class="bg-smoky-black font-poppins text-white-2 m-0 box-border antialiased relative overflow-x-hidden selection:bg-orange-yellow-crayola selection:text-white">
+  
+  <div class="fixed top-0 left-0 -z-10 w-full h-full overflow-hidden pointer-events-none">
+    <div class="absolute -top-[10%] -left-[10%] w-[500px] h-[500px] bg-[#ffda6b] rounded-full mix-blend-screen filter blur-[150px] opacity-10 animate-pulse"></div>
+    <div class="absolute -bottom-[10%] -right-[10%] w-[500px] h-[500px] bg-[#3b82f6] rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
+  </div>
+  <main class="mx-[12px] my-[15px] mb-[75px] min-w-[259px] md:mt-[60px] md:mb-[100px] xl:max-w-[1200px] xl:mx-auto xl:flex xl:justify-center xl:gap-[25px] xl:items-stretch">
+
+    <aside class="sidebar bg-eerie-black-2 border border-jet rounded-[20px] p-[15px] shadow-1 z-[1] mb-[15px] max-h-[112px] overflow-hidden transition-all duration-500 ease-in-out md:w-[520px] md:mx-auto md:p-[30px] md:max-h-[180px] md:mb-[30px] lg:w-[700px] xl:w-auto xl:sticky xl:top-[60px] xl:h-full xl:max-h-max xl:pt-[60px] xl:mb-0" data-sidebar>
+      
+      <div class="sidebar-info relative flex justify-start items-center gap-[15px] md:gap-[25px] xl:flex-col">
+        <figure class="avatar-box bg-gradient-onyx rounded-[20px] md:rounded-[30px]">
+          <img src="assets/images/icon/my-prof.png" alt="Dulpan Adi Saragih" width="80" class="md:w-[120px] xl:w-[150px]">
+        </figure>
+        
+        <div class="info-content w-full">
+          <h1 class="name text-white-2 text-[16px] md:text-[20px] font-medium tracking-tighter mb-[5px] md:mb-[10px] text-left xl:text-center w-full leading-tight">Dulpan Adi Saragih</h1>
+          
+          <div class="dropping-texts h-[20px] md:h-[24px] relative w-full flex justify-start xl:justify-center overflow-hidden text-[11px] md:text-[12px]" id="dropping-texts">
+            <div class="title text-orange-yellow-crayola bg-jet border border-onyx px-2 py-0.5 rounded-[4px] absolute opacity-0 whitespace-nowrap shadow-sm">Human Resource Management 👍</div>
+            <div class="title text-orange-yellow-crayola bg-jet border border-onyx px-2 py-0.5 rounded-[4px] absolute opacity-0 whitespace-nowrap shadow-sm">Business Development 😲</div>
+            <div class="title text-orange-yellow-crayola bg-jet border border-onyx px-2 py-0.5 rounded-[4px] absolute opacity-0 whitespace-nowrap shadow-sm">Finance & Capital Market 🤔</div>
+            <div class="title text-orange-yellow-crayola bg-jet border border-onyx px-2 py-0.5 rounded-[4px] absolute opacity-0 whitespace-nowrap shadow-sm">@dothebest._ 🤓</div>
+            <div class="title text-orange-yellow-crayola bg-jet border border-onyx px-2 py-0.5 rounded-[4px] absolute opacity-0 whitespace-nowrap shadow-sm">#apapun itu, tetap berjuang‼️🔥</div>
+          </div>
+        </div>
+
+        <button class="info_more-btn absolute -top-[15px] -right-[15px] rounded-bl-[15px] text-[12px] text-orange-yellow-crayola bg-border-gradient-onyx p-[10px] shadow-2 transition-all duration-200 z-[1] hover:bg-gradient-yellow-1 md:-top-[30px] md:-right-[30px] md:px-[15px] xl:hidden group" data-sidebar-btn>
+          <span class="hidden md:block md:text-[10px]">Show Contacts</span>
+          <ion-icon name="chevron-down" class="md:hidden"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more opacity-0 invisible transition-all duration-500 xl:opacity-100 xl:visible">
+        <div class="separator w-full h-[1px] bg-jet my-[16px] md:my-[32px] xl:last-of-type:opacity-0 xl:last-of-type:my-[15px]"></div>
+        <ul class="contacts-list grid grid-cols-1 gap-[16px] xl:grid-cols-1">
+          <li class="contact-item min-w-full flex items-center gap-[16px]">
+            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
+              <ion-icon name="mail-outline"></ion-icon><div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+            </div>
+            <div class="contact-info w-[calc(100%-46px)]">
+              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Email</p>
+              <a href="mailto:dulpansmanagement.offc@gmail.com" class="text-white-2 text-[12px] font-light xl:text-[12px]">dulpansmanagement.offc@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item min-w-full flex items-center gap-[16px]">
+            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
+              <ion-icon name="phone-portrait-outline"></ion-icon><div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+            </div>
+            <div class="contact-info w-[calc(100%-46px)]">
+              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Phone</p>
+              <a href="tel:+6285229592941" class="text-white-2 text-[12px] font-light xl:text-[12px]">+62 85229592941</a>
+            </div>
+          </li>
+           <li class="contact-item min-w-full flex items-center gap-[16px]">
+            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
+              <ion-icon name="location-outline"></ion-icon><div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+            </div>
+            <div class="contact-info w-[calc(100%-46px)]">
+              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Location</p>
+              <address class="text-white-2 text-[12px] font-light not-italic xl:text-[12px]">Daerah Istimewa Yogyakarta</address>
+            </div>
+          </li>
+          <li class="contact-item min-w-full flex items-center gap-[16px]">
+            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
+               <div class="blink w-[10px] h-[10px] rounded-full bg-[rgb(218,205,37)] opacity-25 animate-blink relative after:content-[''] after:absolute after:inset-0 after:border-2 after:border-white after:rounded-full"></div>
+               <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+            </div>
+             <div class="contact-info w-[calc(100%-46px)]">
+              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Availability</p>
+              <time class="text-[12px] font-light xl:text-[12px]" style="color: #ffda6b;">Available to work!</time>
+            </div>
+          </li>
+        </ul>
+         <div class="separator w-full h-[1px] bg-jet my-[16px] md:my-[32px] xl:last-of-type:opacity-0 xl:last-of-type:my-[15px]"></div>
+         <ul class="social-list flex justify-start items-center gap-[15px] pb-[4px] pl-[7px] xl:justify-center">
+          <li class="social-item"><a href="https://www.dulpanadisaragih.my.id/" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="person-circle-outline"></ion-icon></a></li>
+          <li class="social-item"><a href="https://www.instagram.com/dulpansrgih_/" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li class="social-item"><a href="https://linkedin.openinapp.co/dulpansrgih" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          <li class="social-item"><a href="https://www.dothebest.my.id/" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="bag-outline"></ion-icon></a></li>
+        </ul>
+      </div>
+    </aside>
+    
+    <div id="sticky-header" class="fixed top-0 left-0 w-full z-[60] bg-[#1e1e24]/80 backdrop-blur-xl border-b border-white/5 px-6 py-3 transform -translate-y-[150%] transition-all duration-500 ease-in-out lg:hidden flex items-center justify-between shadow-2xl opacity-0">
+      
+      <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full p-[1px] bg-gradient-to-tr from-orange-yellow-crayola to-transparent">
+              <img src="assets/images/icon/myprof.jpg" alt="Profile" class="w-full h-full object-cover rounded-full bg-jet">
+          </div>
+          
+          <div class="flex flex-col justify-center">
+              <h1 class="text-white text-sm font-bold tracking-wide leading-none mb-1">Dulpan Adi Saragih</h1>
+              <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Open for Work</span>
+              </div>
+          </div>
+      </div>
+
+      <button class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-yellow-crayola hover:bg-orange-yellow-crayola hover:text-jet transition-colors" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <ion-icon name="arrow-up" class="text-lg"></ion-icon>
+      </button>
+  </div>
+
+    <div class="main-content min-w-full w-full m-0 xl:min-w-[75%] xl:w-[75%] lg:w-[950px] md:w-[520px] md:mx-auto relative">
+      <nav class="navbar fixed bottom-0 left-0 w-full bg-[hsla(240,1%,17%,0.9)] backdrop-blur-[10px] border-t border-jet rounded-t-[15px] shadow-2 z-[50] overflow-visible lg:absolute lg:top-0 lg:bottom-auto lg:left-auto lg:right-0 lg:w-max lg:bg-transparent lg:border-none lg:shadow-none lg:backdrop-blur-none">
+        <ul class="navbar-list flex justify-between items-stretch px-[15px] pb-[10px] h-[70px] lg:h-auto lg:flex lg:items-center lg:gap-[30px] lg:p-[0_20px] lg:bg-[hsla(240,1%,17%,0.75)] lg:border lg:border-jet lg:rounded-bl-[20px] lg:rounded-tr-[20px] lg:backdrop-blur-[10px]">
+      
+          <li class="navbar-item w-[20%] text-center lg:w-auto">
+            <button class="navbar-link active flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="about">
+              <ion-icon name="person-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">About</span>
+            </button>
+          </li>
+
+          <li class="navbar-item w-[20%] text-center lg:w-auto">
+            <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="experience">
+              <ion-icon name="briefcase-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">Experience</span>
+            </button>
+          </li>
+
+          <li class="navbar-item w-[20%] text-center relative h-full lg:w-auto">
+            <button class="navbar-link group flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 lg:justify-center lg:text-light-gray lg:hover:text-light-gray-70 lg:[&.active]:text-orange-yellow-crayola lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="certificate">
+              <div class="mobile-qris-btn absolute -top-[45px] left-1/2 -translate-x-1/2 w-[70px] h-[70px] rounded-full flex items-center justify-center transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) z-50 lg:hidden
+                  /* TAMPILAN NORMAL (TRANSPARAN + BORDER PUTIH) */
+                  bg-white/10 backdrop-blur-md
+                  border-[2px] border-white
+                  shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+                  
+                  /* TAMPILAN ACTIVE (SAAT DIKLIK) */
+                  group-[.active]:-translate-y-[8px]
+                  group-[.active]:bg-orange-yellow-crayola
+                  group-[.active]:border-orange-yellow-crayola
+                  group-[.active]:shadow-[0_0_30px_rgba(251,191,36,0.6)]"> 
+                
+                <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/40 to-transparent pointer-events-none"></div>
+                <ion-icon name="ribbon-outline" class="nav-icon-middle text-[30px] z-10 transition-all duration-300
+                    text-white
+                    group-[.active]:scale-110 
+                    group-[.active]:rotate-12
+                    group-[.active]:text-white">
+                </ion-icon>
+              </div>
+              <span class="hidden lg:block">Certificated</span>
+              <span class="lg:hidden text-[9px] font-bold text-white opacity-0 group-[.active]:opacity-100 transition-opacity duration-300 translate-y-1 drop-shadow-md"></span>
+            </button>
+          </li>
+
+          <li class="navbar-item w-[20%] text-center lg:w-auto">
+            <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="education">
+              <ion-icon name="school-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">Education</span>
+            </button>
+          </li>
+
+          <li class="navbar-item w-[20%] text-center lg:w-auto">
+            <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="myskill">
+              <ion-icon name="construct-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">My Skill</span>
+            </button>
+          </li>
+
+          <li class="navbar-item hidden lg:block lg:w-auto">
+            <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="cv">
+              <span class="text-[13px] font-medium">CV Preview</span>
+            </button>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div id="main-content"></div>
+
+    </div>
+  
+  </main>
+  
+  <script type="module" src="./main.js"></script>
+  
+  <script>
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('[data-nav-link]');
+      if(btn) {
+        const qrisBtn = document.querySelector('.mobile-qris-btn');
+        const qrisIcon = document.querySelector('.nav-icon-middle');
+        
+        if(btn.dataset.navLink === 'certificate') {
+            qrisBtn.classList.add('bg-orange-yellow-crayola');
+            qrisIcon.classList.remove('text-orange-yellow-crayola');
+            qrisIcon.classList.add('text-jet');
+        } else {
+            qrisBtn.classList.remove('bg-orange-yellow-crayola');
+            qrisIcon.classList.add('text-orange-yellow-crayola');
+            qrisIcon.classList.remove('text-jet');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
