@@ -54,7 +54,11 @@
       }
     }
   </script>
+  
+  <link rel="stylesheet" href="style.css">
+
   <style>
+    /* Inline Overrides needed for specific animations */
     body::-webkit-scrollbar { width: 20px; }
     body::-webkit-scrollbar-track { background: hsl(0, 0%, 7%); }
     body::-webkit-scrollbar-thumb { border: 5px solid hsl(0, 0%, 7%); background: hsla(0, 0%, 100%, 0.1); border-radius: 20px; }
@@ -78,7 +82,7 @@
     .has-scrollbar::-webkit-scrollbar-track { background: hsl(240, 1%, 17%); border-radius: 5px; }
     .has-scrollbar::-webkit-scrollbar-thumb { background: hsl(45, 100%, 72%); border-radius: 5px; }
     
-    /* ANIMASI DROPPING TEXT (12.5s Total) */
+    /* ANIMASI DROPPING TEXT */
     .dropping-texts > div:nth-child(1) { animation: roll 12.5s linear infinite 0s; }
     .dropping-texts > div:nth-child(2) { animation: roll 12.5s linear infinite 2.5s; }
     .dropping-texts > div:nth-child(3) { animation: roll 12.5s linear infinite 5s; }
@@ -188,27 +192,34 @@
     </aside>
     
     <div id="sticky-header" class="fixed top-0 left-0 w-full z-[60] bg-[#1e1e24]/80 backdrop-blur-xl border-b border-white/5 px-6 py-3 transform -translate-y-[150%] transition-all duration-500 ease-in-out lg:hidden flex items-center justify-between shadow-2xl opacity-0">
-      
-      <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full p-[1px] bg-gradient-to-tr from-orange-yellow-crayola to-transparent">
-              <img src="assets/images/icon/myprof.jpg" alt="Profile" class="w-full h-full object-cover rounded-full bg-jet">
-          </div>
-          
-          <div class="flex flex-col justify-center">
-              <h1 class="text-white text-sm font-bold tracking-wide leading-none mb-1">Dulpan Adi Saragih</h1>
-              <div class="flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                  <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Open for Work</span>
-              </div>
-          </div>
-      </div>
-
-      <button class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-yellow-crayola hover:bg-orange-yellow-crayola hover:text-jet transition-colors" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-          <ion-icon name="arrow-up" class="text-lg"></ion-icon>
-      </button>
-  </div>
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full p-[1px] bg-gradient-to-tr from-orange-yellow-crayola to-transparent">
+                <img src="assets/images/icon/myprof.jpg" alt="Profile" class="w-full h-full object-cover rounded-full bg-jet">
+            </div>
+            <div class="flex flex-col justify-center">
+                <h1 class="text-white text-sm font-bold tracking-wide leading-none mb-1">Dulpan Adi Saragih</h1>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase">Open for Work</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="https://linkedin.openinapp.co/dulpansrgih" target="_blank" 
+              class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-yellow-crayola hover:bg-orange-yellow-crayola hover:text-jet transition-colors shadow-lg active:scale-90 group"
+              aria-label="LinkedIn">
+                <ion-icon name="logo-linkedin" class="text-lg group-hover:rotate-12 transition-transform"></ion-icon>
+            </a>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+              class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-orange-yellow-crayola hover:bg-orange-yellow-crayola hover:text-jet transition-colors shadow-lg active:scale-90"
+              aria-label="Scroll to Top">
+                <ion-icon name="arrow-up" class="text-lg"></ion-icon>
+            </button>
+        </div>
+    </div>
 
     <div class="main-content min-w-full w-full m-0 xl:min-w-[75%] xl:w-[75%] lg:w-[950px] md:w-[520px] md:mx-auto relative">
+      
       <nav class="navbar fixed bottom-0 left-0 w-full bg-[hsla(240,1%,17%,0.9)] backdrop-blur-[10px] border-t border-jet rounded-t-[15px] shadow-2 z-[50] overflow-visible lg:absolute lg:top-0 lg:bottom-auto lg:left-auto lg:right-0 lg:w-max lg:bg-transparent lg:border-none lg:shadow-none lg:backdrop-blur-none">
         <ul class="navbar-list flex justify-between items-stretch px-[15px] pb-[10px] h-[70px] lg:h-auto lg:flex lg:items-center lg:gap-[30px] lg:p-[0_20px] lg:bg-[hsla(240,1%,17%,0.75)] lg:border lg:border-jet lg:rounded-bl-[20px] lg:rounded-tr-[20px] lg:backdrop-blur-[10px]">
       
@@ -228,28 +239,32 @@
 
           <li class="navbar-item w-[20%] text-center relative h-full lg:w-auto">
             <button class="navbar-link group flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 lg:justify-center lg:text-light-gray lg:hover:text-light-gray-70 lg:[&.active]:text-orange-yellow-crayola lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="certificate">
-              <div class="mobile-qris-btn absolute -top-[45px] left-1/2 -translate-x-1/2 w-[70px] h-[70px] rounded-full flex items-center justify-center transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) z-50 lg:hidden
-                  /* TAMPILAN NORMAL (TRANSPARAN + BORDER PUTIH) */
+              
+              <div class="mobile-qris-btn absolute -top-[25px] left-1/2 -translate-x-1/2 w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) z-50 lg:hidden
+                  /* TAMPILAN NORMAL */
                   bg-white/10 backdrop-blur-md
                   border-[2px] border-white
                   shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
                   
-                  /* TAMPILAN ACTIVE (SAAT DIKLIK) */
-                  group-[.active]:-translate-y-[8px]
+                  /* TAMPILAN ACTIVE */
+                  group-[.active]:-translate-y-[5px]
                   group-[.active]:bg-orange-yellow-crayola
                   group-[.active]:border-orange-yellow-crayola
                   group-[.active]:shadow-[0_0_30px_rgba(251,191,36,0.6)]"> 
                 
                 <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/40 to-transparent pointer-events-none"></div>
-                <ion-icon name="ribbon-outline" class="nav-icon-middle text-[30px] z-10 transition-all duration-300
+                
+                <ion-icon name="ribbon-outline" class="nav-icon-middle text-[26px] z-10 transition-all duration-300
                     text-white
                     group-[.active]:scale-110 
                     group-[.active]:rotate-12
                     group-[.active]:text-white">
                 </ion-icon>
               </div>
+
               <span class="hidden lg:block">Certificated</span>
-              <span class="lg:hidden text-[9px] font-bold text-white opacity-0 group-[.active]:opacity-100 transition-opacity duration-300 translate-y-1 drop-shadow-md"></span>
+              
+              <span class="lg:hidden text-[9px] font-bold text-white opacity-0 group-[.active]:opacity-100 transition-opacity duration-300 translate-y-3 drop-shadow-md"></span>
             </button>
           </li>
 
@@ -268,9 +283,10 @@
           </li>
 
           <li class="navbar-item hidden lg:block lg:w-auto">
-            <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="cv">
-              <span class="text-[13px] font-medium">CV Preview</span>
-            </button>
+             <button class="navbar-link nav-cv-special" data-nav-link="cv">
+                <span>CV Preview</span>
+                <ion-icon name="document-text-outline" class="cv-icon-desktop"></ion-icon>
+             </button>
           </li>
 
         </ul>

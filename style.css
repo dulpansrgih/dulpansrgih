@@ -93,3 +93,76 @@
 #lightbox-certificate {
     transition: opacity 0.3s ease;
 }
+
+/* =========================================
+   SPECIAL CV NAV BUTTON (DESKTOP ONLY)
+   ========================================= */
+
+/* Default Mobile: Icon disembunyikan */
+.cv-icon-desktop {
+  display: none;
+}
+
+/* TAMPILAN KHUSUS DESKTOP (Layar > 1024px) */
+@media (min-width: 1024px) {
+  
+  /* Geser CV ke paling kanan atau beri jarak */
+  .navbar-list {
+     display: flex;
+     align-items: center;
+     gap: 30px; /* Jarak antar menu */
+  }
+
+  /* Target tombol CV Spesial */
+  .navbar-link.nav-cv-special {
+      background: linear-gradient(135deg, #fbbf24, #d97706); /* Warna Emas */
+      color: #1e1e24 !important; /* Warna Teks Gelap (Kontras) */
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex !important;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2); /* Efek Glow Halus */
+      position: relative;
+      overflow: hidden;
+      height: auto !important; /* Reset height override */
+      width: auto !important;
+  }
+
+  /* Munculkan Icon Dokumen di Desktop */
+  .navbar-link.nav-cv-special .cv-icon-desktop {
+      display: block !important;
+      font-size: 1.2rem;
+  }
+
+  /* Efek Hover Keren */
+  .navbar-link.nav-cv-special:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+      color: #000 !important;
+  }
+
+  /* Efek Kilatan Cahaya saat Hover */
+  .navbar-link.nav-cv-special::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.5s;
+  }
+  
+  .navbar-link.nav-cv-special:hover::after {
+      left: 100%;
+  }
+  
+  /* Reset warna aktif default khusus tombol ini */
+  .navbar-link.nav-cv-special.active {
+      color: #1e1e24 !important;
+  }
+}

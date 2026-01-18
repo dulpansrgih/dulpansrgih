@@ -1,24 +1,37 @@
 export const aboutContent = `
 <style>
-  /* SCROLLBAR ESTETIK FINAL */
+  /* SCROLLBAR ESTETIK */
   .scrollbar-estetik::-webkit-scrollbar {
-      height: 3px;  /* Horizontal (Mobile Slider) */
-      width: 6px;   /* FIXED: Vertikal (Desktop Scroll) - Wajib ada width biar muncul */
+      width: 5px;
   }
-  
   .scrollbar-estetik::-webkit-scrollbar-track {
       background: rgba(255, 255, 255, 0.02);
-      margin-block: 5px; 
       border-radius: 10px;
   }
-  
   .scrollbar-estetik::-webkit-scrollbar-thumb {
-      background: #fbbf24; /* Warna Orange Emas */
+      background: #fbbf24; 
       border-radius: 10px;
   }
-  
   .scrollbar-estetik::-webkit-scrollbar-thumb:hover {
       background: #d97706; 
+  }
+  
+  /* Timeline Line */
+  .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 7px;
+      width: 2px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: 0;
+  }
+
+  /* ABSTRACT BACKGROUND PATTERN FOR SIDEBAR */
+  .sidebar-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
   }
 </style>
 
@@ -55,10 +68,10 @@ export const aboutContent = `
                Halo! Saya <strong class="text-white font-bold text-lg">Dulpan Adi Saragih</strong>.
             </p>
             <p>
-               Saya adalah lulusan <strong class="text-orange-yellow-crayola">Universitas Teknologi Yogyakarta (UTY)</strong> jurusan <span class="text-white font-medium">Manajemen</span> dengan konsentrasi <strong class="text-orange-yellow-crayola">Manajemen Sumber Daya Manusia (MSDM)</strong>.
+               Saya adalah lulusan <strong class="text-orange-yellow-crayola">Universitas Teknologi Yogyakarta (UTY)</strong> jurusan Manajemen dengan konsentrasi <strong class="text-orange-yellow-crayola">Manajemen Sumber Daya Manusia (MSDM)</strong>.
             </p>
             <p>
-               Saya tidak hanya fokus pada pengelolaan SDM, tetapi juga memiliki kompetensi kuat dalam <span class="text-white font-medium">Analisis Keuangan</span> dan <span class="text-white font-medium">Strategi Pemasaran</span>. Kombinasi ini memungkinkan saya menciptakan ekosistem kerja yang produktif, efisien secara biaya, dan berorientasi pasar.
+               Saya dikenal sebagai pribadi yang adaptif, komunikatif, dan berintegritas tinggi. Selain fokus pada pengelolaan SDM, saya memiliki semangat belajar tinggi untuk menghadapi tantangan baru dalam dunia bisnis dan profesional.
             </p>
         </div>
 
@@ -87,58 +100,83 @@ export const aboutContent = `
     </div>
   </section>
 
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
-      <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
-          <ion-icon name="people-circle-outline" class="text-3xl text-orange-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-          <h3 class="text-white font-bold text-md mb-1">HR Management</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Fokus pada pengembangan talenta, rekrutmen, dan efektivitas organisasi.</p>
-      </div>
+  <section class="mt-4">
+      <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 border-l-4 border-orange-yellow-crayola pl-3">Areas of Expertise</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+          
+          <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
+              <ion-icon name="people-circle-outline" class="text-3xl text-orange-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
+              <h3 class="text-white font-bold text-sm mb-1">Human Capital</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Talent Acquisition, Development, & Organizational Effectiveness.</p>
+          </div>
 
-      <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
-          <ion-icon name="stats-chart-outline" class="text-3xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-          <h3 class="text-white font-bold text-md mb-1">Finance & Marketing</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Menguasai analisis keuangan dan strategi pemasaran yang terintegrasi.</p>
-      </div>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
+              <ion-icon name="wallet-outline" class="text-3xl text-green-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
+              <h3 class="text-white font-bold text-sm mb-1">Finance</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Financial Analysis, Budgeting (Bendahara), & Reporting.</p>
+          </div>
 
-      <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
-          <ion-icon name="shield-checkmark-outline" class="text-3xl text-green-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-          <h3 class="text-white font-bold text-md mb-1">Organizational Leader</h3>
-          <p class="text-gray-400 text-xs leading-relaxed">Pengalaman memimpin organisasi dan pengelolaan anggaran (Bendahara).</p>
+          <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
+              <ion-icon name="trending-up-outline" class="text-3xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
+              <h3 class="text-white font-bold text-sm mb-1">Business Dev</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Event Management, Strategic Planning, & Market Research.</p>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
+              <ion-icon name="shield-checkmark-outline" class="text-3xl text-purple-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
+              <h3 class="text-white font-bold text-sm mb-1">Leadership</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed">Team Management, Integrity, & Adaptability in fast-paced env.</p>
+          </div>
       </div>
   </section>
 
-  <section class="pt-4 border-t border-white/5">
-     <div class="flex items-center justify-between mb-4">
-        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest">Connect & Explore</h3>
-        <div class="h-px bg-white/10 flex-grow ml-4"></div>
-     </div>
-     <div class="flex md:grid md:grid-cols-4 gap-3 overflow-x-auto pb-6 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 snap-x scrollbar-estetik">
-        <a href="https://www.dulpanadisaragih.my.id/" target="_blank" class="min-w-[160px] md:min-w-0 p-3 rounded-xl bg-[#1e1e24] border border-white/5 hover:border-orange-yellow-crayola/50 transition-all flex items-center gap-3 group snap-center">
-            <div class="w-10 h-10 rounded-full overflow-hidden bg-white/10 shrink-0"><img src="assets/images/prof-link.png" class="w-full h-full object-cover"></div>
-            <div class="overflow-hidden"><h5 class="text-white text-xs font-bold truncate group-hover:text-orange-yellow-crayola">Personal Web</h5><p class="text-[10px] text-gray-500 truncate">Portfolio Center</p></div>
-        </a>
-        <a href="https://the.dulpanadisaragih.my.id/" target="_blank" class="min-w-[160px] md:min-w-0 p-3 rounded-xl bg-[#1e1e24] border border-white/5 hover:border-orange-yellow-crayola/50 transition-all flex items-center gap-3 group snap-center">
-            <div class="w-10 h-10 rounded-full overflow-hidden bg-white/10 shrink-0"><img src="assets/images/the-dulls.png" class="w-full h-full object-cover"></div>
-            <div class="overflow-hidden"><h5 class="text-white text-xs font-bold truncate group-hover:text-orange-yellow-crayola">The Dulls</h5><p class="text-[10px] text-gray-500 truncate">Creative Works</p></div>
-        </a>
-        <a href="https://info.kspmuty.com/" target="_blank" class="min-w-[160px] md:min-w-0 p-3 rounded-xl bg-[#1e1e24] border border-white/5 hover:border-orange-yellow-crayola/50 transition-all flex items-center gap-3 group snap-center">
-            <div class="w-10 h-10 rounded-full overflow-hidden bg-white/10 shrink-0"><img src="assets/images/kspm-link.png" class="w-full h-full object-cover"></div>
-            <div class="overflow-hidden"><h5 class="text-white text-xs font-bold truncate group-hover:text-orange-yellow-crayola">KSPM UTY</h5><p class="text-[10px] text-gray-500 truncate">Organization</p></div>
-        </a>
-        <a href="https://qris.dulpanadisaragih.my.id/" target="_blank" class="min-w-[160px] md:min-w-0 p-3 rounded-xl bg-[#1e1e24] border border-white/5 hover:border-orange-yellow-crayola/50 transition-all flex items-center gap-3 group snap-center">
-            <div class="w-10 h-10 rounded-full overflow-hidden bg-white/10 shrink-0"><img src="assets/images/support.png" class="w-full h-full object-cover"></div>
-            <div class="overflow-hidden"><h5 class="text-white text-xs font-bold truncate group-hover:text-orange-yellow-crayola">Support Me</h5><p class="text-[10px] text-gray-500 truncate">Donation / QRIS</p></div>
-        </a>
-     </div>
+  <section class="mt-2 pb-6">
+       <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-5 border-l-4 border-blue-500 pl-3">Professional Journey</h3>
+       
+       <div class="timeline-line relative grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 pl-4 md:pl-0">
+           
+           <div class="relative pl-6 md:pl-0 md:pt-6 group">
+               <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-orange-yellow-crayola border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
+               <div class="hidden md:block absolute top-2 left-0 w-full h-[2px] bg-white/10 -z-0"></div>
+               <h4 class="text-white font-bold text-sm">Graduation</h4>
+               <span class="text-[10px] text-orange-yellow-crayola font-mono">2025 • UTY</span>
+               <p class="text-gray-400 text-[11px] mt-1">Bachelor of Management (MSDM).</p>
+           </div>
+
+           <div class="relative pl-6 md:pl-0 md:pt-6 group">
+               <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
+               <div class="hidden md:block absolute top-2 left-0 w-full h-[2px] bg-white/10 -z-0"></div>
+               <h4 class="text-white font-bold text-sm">Assistant Lecturer</h4>
+               <span class="text-[10px] text-blue-400 font-mono">2024 • Finance</span>
+               <p class="text-gray-400 text-[11px] mt-1">Teaching & Mentoring Students.</p>
+           </div>
+
+           <div class="relative pl-6 md:pl-0 md:pt-6 group">
+               <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-green-500 border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
+               <div class="hidden md:block absolute top-2 left-0 w-full h-[2px] bg-white/10 -z-0"></div>
+               <h4 class="text-white font-bold text-sm">Internship</h4>
+               <span class="text-[10px] text-green-400 font-mono">2024 • Syncore</span>
+               <p class="text-gray-400 text-[11px] mt-1">Professional Work Experience.</p>
+           </div>
+
+           <div class="relative pl-6 md:pl-0 md:pt-6 group">
+               <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-purple-500 border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
+               <div class="hidden md:block absolute top-2 left-0 w-1/2 h-[2px] bg-white/10 -z-0"></div>
+               <h4 class="text-white font-bold text-sm">Treasurer</h4>
+               <span class="text-[10px] text-purple-400 font-mono">2023 • KSPM</span>
+               <p class="text-gray-400 text-[11px] mt-1">Budgeting & Financial Reports.</p>
+           </div>
+
+       </div>
   </section>
+
 </article>
-
 
 <div id="about-modal" class="hidden fixed inset-0 z-[9999] flex items-end md:items-center justify-center">
     
     <div class="absolute inset-0 bg-black/60 backdrop-blur-[4px] transition-opacity opacity-0" onclick="window.toggleAboutModal(false)"></div>
     
-    <div id="modal-card" class="relative w-full h-[90vh] md:h-auto md:max-h-[85vh] md:max-w-5xl md:w-full bg-[#18181b] rounded-t-[30px] md:rounded-3xl border-t border-white/10 md:border border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex flex-col md:flex-row overflow-hidden transform transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) translate-y-full md:translate-y-10 md:scale-95 opacity-0 z-20">
+    <div id="modal-card" class="relative w-full h-[90vh] md:max-w-6xl md:w-[95%] bg-[#18181b] rounded-t-[30px] md:rounded-3xl border-t border-white/10 md:border border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] flex flex-col md:flex-row overflow-hidden transform transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) translate-y-full md:translate-y-10 md:scale-95 opacity-0 z-20">
         
         <div class="absolute top-3 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-white/20 rounded-full md:hidden z-30" onclick="window.toggleAboutModal(false)"></div>
 
@@ -152,41 +190,101 @@ export const aboutContent = `
             </button>
         </div>
 
-        <div class="hidden md:flex w-1/3 bg-[#1e1e24] relative p-8 flex-col justify-between border-r border-white/5">
-             <div class="absolute top-0 right-0 p-6 opacity-5 pointer-events-none"><ion-icon name="finger-print" class="text-9xl text-white"></ion-icon></div>
-            <div class="relative z-10">
-                <div class="w-32 h-32 rounded-2xl p-1 bg-gradient-to-br from-orange-yellow-crayola to-amber-600 mb-6 shadow-lg">
-                    <img src="assets/images/icon/myprof.jpg" class="w-full h-full object-cover rounded-xl bg-[#1e1e24]">
+        <div class="hidden md:flex w-[35%] bg-[#1e1e24] sidebar-pattern relative p-8 flex-col justify-between h-full border-r border-white/5 overflow-hidden">
+             
+             <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-orange-500/5 to-transparent pointer-events-none"></div>
+             <div class="absolute top-10 right-0 p-6 opacity-[0.03] pointer-events-none rotate-12"><ion-icon name="finger-print" class="text-9xl text-white"></ion-icon></div>
+             <div class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -rotate-12 pointer-events-none"></div>
+
+            <div class="flex flex-col h-full relative z-10">
+            
+                 <div class="shrink-0">
+                    <div class="w-28 h-28 rounded-2xl p-1 bg-gradient-to-br from-orange-yellow-crayola to-amber-600 mb-6 shadow-xl hover:scale-105 transition-transform relative z-10">
+                        <img src="assets/images/icon/myprof.jpg" class="w-full h-full object-cover rounded-xl bg-[#1e1e24]">
+                    </div>
+                    
+                    <h3 class="text-3xl font-bold text-white leading-tight mb-2">Dulpan Adi Saragih</h3>
+                    
+                    <div class="flex items-center gap-2 mb-6">
+                        <ion-icon name="briefcase" class="text-orange-yellow-crayola"></ion-icon>
+                        <span class="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-orange-yellow-crayola to-orange-200">
+                            Majoring Human Capital Management
+                        </span>
+                    </div>
+                    
+                    <div class="flex items-center w-full gap-0 bg-[#121212] rounded-xl border border-white/10 p-1 shadow-inner">
+                        <div class="px-5 py-2 rounded-lg bg-gradient-to-r from-orange-yellow-crayola to-amber-600 text-jet font-bold text-sm whitespace-nowrap shadow-md">
+                            IPK 3.54
+                        </div>
+                        <button onclick="window.open('http://verifikasi.uty.ac.id/lulusan/02OE53F4KR1QM26ZULVI0GA9TX7B8YJP146', '_blank')" 
+                                class="flex-1 flex items-center justify-center gap-2 py-2 text-gray-400 hover:text-green-400 hover:bg-white/5 rounded-r-lg transition-all group">
+                            <span class="text-xs font-bold uppercase tracking-wide">Verifikasi Ijazah</span>
+                            <ion-icon name="arrow-forward" class="text-xs group-hover:translate-x-1 transition-transform"></ion-icon>
+                        </button>
+                    </div>
                 </div>
-                
-                <h3 class="text-2xl xl:text-3xl font-bold text-white leading-tight mb-2 whitespace-nowrap overflow-hidden text-ellipsis">Dulpan Adi Saragih</h3>
-                
-                <div class="inline-block px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg">
-                    <p class="text-orange-yellow-crayola text-xs font-bold tracking-wide uppercase">Bachelor of Management</p>
+
+                <div class="flex-grow"></div>
+
+                <div class="shrink-0 space-y-6">
+                    
+                    <div class="space-y-4 pt-6 border-t border-white/5 relative">
+                         <div class="absolute -top-[3px] left-0 w-10 h-[1px] bg-orange-yellow-crayola/50"></div>
+
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 group-hover:bg-blue-500/20 flex items-center justify-center text-blue-400 transition-colors shrink-0 border border-white/5"><ion-icon name="school"></ion-icon></div>
+                            <div class="overflow-hidden">
+                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">University</p>
+                                <p class="text-gray-300 text-xs font-medium truncate">Universitas Teknologi Yogyakarta</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 group-hover:bg-red-500/20 flex items-center justify-center text-red-400 transition-colors shrink-0 border border-white/5"><ion-icon name="location"></ion-icon></div>
+                            <div>
+                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Location</p>
+                                <p class="text-gray-300 text-xs font-medium">Yogyakarta, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[10px] text-gray-500 uppercase font-bold mb-3 tracking-widest flex items-center gap-2">
+                            Connect With Me <span class="h-[1px] w-10 bg-white/10"></span>
+                        </p>
+                        <div class="grid grid-cols-4 gap-2">
+                            <a href="mailto:dulpansmanagement.offc@gmail.com" class="aspect-square bg-white/5 rounded-xl flex items-center justify-center text-orange-yellow-crayola hover:bg-orange-yellow-crayola hover:text-jet transition-all border border-white/5 hover:scale-105 shadow-lg group" title="Email">
+                                <ion-icon name="mail" class="text-xl group-hover:animate-bounce"></ion-icon>
+                            </a>
+                            <a href="https://linkedin.openinapp.co/dulpansrgih" target="_blank" class="aspect-square bg-white/5 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-500 hover:text-white transition-all border border-white/5 hover:scale-105 shadow-lg group" title="LinkedIn">
+                                <ion-icon name="logo-linkedin" class="text-xl group-hover:animate-bounce"></ion-icon>
+                            </a>
+                            <a href="https://www.instagram.com/dulpansrgih_/" target="_blank" class="aspect-square bg-white/5 rounded-xl flex items-center justify-center text-pink-400 hover:bg-pink-500 hover:text-white transition-all border border-white/5 hover:scale-105 shadow-lg group" title="Instagram">
+                                <ion-icon name="logo-instagram" class="text-xl group-hover:animate-bounce"></ion-icon>
+                            </a>
+                             <a href="assets/cv/Dulpan Adi Saragih.pdf" target="_blank" class="aspect-square bg-white/5 rounded-xl flex items-center justify-center text-green-400 hover:bg-green-500 hover:text-white transition-all border border-white/5 hover:scale-105 shadow-lg group" title="Download CV">
+                                <ion-icon name="document-text" class="text-xl group-hover:animate-bounce"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="mt-8 space-y-5 relative z-10">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-orange-yellow-crayola shrink-0"><ion-icon name="school"></ion-icon></div>
-                    <div><p class="text-xs text-gray-500 uppercase font-bold">University</p><p class="text-white text-sm">Universitas Teknologi Yogyakarta</p></div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-orange-yellow-crayola shrink-0"><ion-icon name="location"></ion-icon></div>
-                    <div><p class="text-xs text-gray-500 uppercase font-bold">Location</p><p class="text-white text-sm">Yogyakarta, Indonesia</p></div>
-                </div>
+
             </div>
         </div>
 
-        <div class="w-full md:w-2/3 bg-[#121212] flex flex-col h-full overflow-hidden relative">
+        <div class="w-full md:w-[65%] bg-[#121212] flex flex-col h-full overflow-hidden relative">
             
-            <div class="hidden md:flex p-6 border-b border-white/5 justify-between items-center shrink-0">
-                <h4 class="text-gray-400 text-sm font-medium tracking-wide">FULL BACKGROUND</h4>
-                <button onclick="window.toggleAboutModal(false)" class="w-10 h-10 rounded-full bg-white/5 hover:bg-red-500/20 hover:text-red-500 text-gray-400 items-center justify-center transition-all flex">
-                    <ion-icon name="close" class="text-xl"></ion-icon>
+            <div class="hidden md:flex p-6 border-b border-white/5 justify-between items-center shrink-0 bg-[#121212] z-20">
+                <div class="flex items-center gap-3">
+                    <ion-icon name="layers" class="text-orange-yellow-crayola"></ion-icon>
+                    <h4 class="text-gray-200 text-sm font-bold tracking-wide">FULL BACKGROUND</h4>
+                </div>
+                <button onclick="window.toggleAboutModal(false)" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-red-500/20 hover:text-red-500 text-gray-400 flex items-center justify-center transition-all">
+                    <ion-icon name="close" class="text-lg"></ion-icon>
                 </button>
             </div>
             
-            <div class="flex-1 overflow-y-auto min-h-0 scrollbar-estetik p-6 md:px-10 md:pb-10 md:pt-4 space-y-8 pb-20">
+            <div class="flex-1 overflow-y-auto min-h-0 scrollbar-estetik p-6 md:px-10 md:pb-10 md:pt-6 space-y-8">
                 
                 <div class="flex md:hidden items-center gap-4 mb-6 p-4 bg-white/5 rounded-2xl border border-white/5">
                     <div class="w-16 h-16 rounded-xl bg-orange-500/20 overflow-hidden shrink-0">
@@ -194,81 +292,98 @@ export const aboutContent = `
                     </div>
                     <div>
                         <h4 class="text-white font-bold text-lg">Dulpan Adi Saragih</h4>
-                        <p class="text-orange-yellow-crayola text-xs font-mono uppercase">MSDM • Finance • Marketing</p>
+                        <div class="flex flex-col gap-1.5 items-start mt-1">
+                             <p class="text-orange-yellow-crayola text-xs font-mono uppercase">IPK 3.54 • Fresh Graduate</p>
+                             <button onclick="window.open('http://verifikasi.uty.ac.id/lulusan/02OE53F4KR1QM26ZULVI0GA9TX7B8YJP146', '_blank')" 
+                                class="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-500/10 border border-blue-500/20 text-[9px] font-medium text-blue-300">
+                                <ion-icon name="checkmark-circle"></ion-icon> Verifikasi
+                             </button>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-3">Academic & <span class="text-orange-yellow-crayola">Skills</span></h3>
-                    <div class="text-gray-300 text-sm leading-7 space-y-3 text-justify">
-                        <p>
-                            Lulusan <strong>Universitas Teknologi Yogyakarta (UTY)</strong> jurusan Manajemen dengan spesialisasi <strong>MSDM</strong>. Saya memiliki keunggulan kompetitif berupa pemahaman lintas disiplin ilmu.
-                        </p>
-                        <p>
-                             Di balik fokus saya pada <em>Human Capital</em>, saya juga menguasai dasar-dasar <strong>Manajemen Keuangan</strong> (analisis laporan, budgeting) dan <strong>Manajemen Pemasaran</strong> (strategi pasar, perilaku konsumen). Ini membuat saya mampu mengambil keputusan manajerial yang holistik.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-gradient-to-r from-green-900/20 to-emerald-900/10 border border-green-500/20 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><ion-icon name="wallet" class="text-6xl text-green-500"></ion-icon></div>
-                    <h4 class="text-green-400 font-bold text-sm mb-1 uppercase tracking-wider">Leadership Experience</h4>
-                    <h5 class="text-white font-bold text-lg mb-2">Bendahara Umum - KSPM UTY</h5>
-                    <p class="text-gray-300 text-xs leading-relaxed max-w-[90%]">
-                        Bertanggung jawab penuh atas pengelolaan arus kas organisasi, menyusun laporan pertanggungjawaban keuangan yang transparan, serta merancang anggaran efisien untuk setiap kegiatan Kelompok Studi Pasar Modal (KSPM).
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-900/20 to-indigo-900/10 border border-blue-500/20 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><ion-icon name="library" class="text-6xl text-blue-500"></ion-icon></div>
+                    <h4 class="text-blue-400 font-bold text-sm mb-2 uppercase tracking-wider flex items-center gap-2">
+                        <ion-icon name="ribbon"></ion-icon> Academic Excellence
+                    </h4>
+                    <h5 class="text-white font-bold text-lg mb-2">Asisten Dosen - Manajemen Keuangan Praktik</h5>
+                    <p class="text-gray-300 text-xs leading-relaxed text-justify mb-2">
+                        Saya dipercaya menjadi Asisten Dosen yang menuntut <strong>ketelitian tinggi</strong>, kemampuan <strong>komunikasi yang baik</strong>, serta pemahaman mendalam terhadap materi. 
+                    </p>
+                    <p class="text-gray-400 text-xs leading-relaxed text-justify">
+                        Peran ini melatih saya dalam membimbing mahasiswa lain (mentoring), menjelaskan konsep kompleks menjadi sederhana, dan menjaga standar akademik yang tinggi.
                     </p>
                 </div>
 
                 <div>
-                     <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">Professional Competencies</h3>
-                     <div class="flex flex-wrap gap-2">
-                         <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white">Talent Acquisition</span>
-                         <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white">HRIS</span>
-                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Financial Analysis</span>
-                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Budgeting</span>
-                         <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-lg text-xs text-purple-400 font-medium">Marketing Strategy</span>
-                         <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white">SPSS</span>
-                         <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white">Microsoft Excel</span>
-                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Leadership</span>
-                     </div>
+                     <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-pink-500 rounded-full"></span> Career Aspirations
+                    </h3>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-pink-500/30 transition-all">
+                        <p class="text-gray-300 text-xs leading-7 text-justify">
+                            Sebagai lulusan baru dengan latar belakang Manajemen yang kuat, saya memiliki ambisi untuk mengembangkan karir profesional di bidang <strong>Human Capital</strong>, <strong>General Affair</strong>, atau <strong>Administrasi Keuangan</strong>. Saya siap berkontribusi dengan etos kerja tinggi, kemampuan adaptasi cepat, dan keinginan untuk terus belajar.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">HR Generalist</span>
+                            <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">Finance Staff</span>
+                            <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">Admin</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-orange-yellow-crayola rounded-full"></span> Journey Timeline
+                     <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-orange-yellow-crayola rounded-full"></span> Organizational & Committee
                     </h3>
-                    <div class="space-y-6 pl-2 border-l border-white/10 ml-1">
+                    
+                    <div class="space-y-4">
                         
-                        <div class="relative pl-6">
-                            <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-orange-yellow-crayola rounded-full ring-4 ring-[#121212]"></div>
-                            <h6 class="text-white font-bold text-sm">Bachelor of Management (S.M)</h6>
-                            <span class="text-xs text-gray-500">Universitas Teknologi Yogyakarta • 2025</span>
-                            <p class="text-xs text-gray-400 mt-1">Lulus dengan konsentrasi Manajemen SDM.</p>
+                         <div class="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-green-500/30 transition-all">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="text-white font-bold text-sm">Bendahara Umum - KSPM UTY</h5>
+                                <span class="px-2 py-0.5 rounded text-[10px] bg-green-500/20 text-green-300 border border-green-500/30">Finance</span>
+                            </div>
+                            <p class="text-gray-300 text-xs leading-relaxed text-justify">
+                                Bertanggung jawab penuh atas pengelolaan arus kas organisasi, menyusun laporan pertanggungjawaban keuangan yang transparan, serta merancang anggaran efisien untuk setiap kegiatan.
+                            </p>
                         </div>
 
-                        <div class="relative pl-6">
-                            <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-blue-500 rounded-full ring-4 ring-[#121212]"></div>
-                            <h6 class="text-white font-bold text-sm">Asisten Dosen (Finance)</h6>
-                            <span class="text-xs text-gray-500">Universitas Teknologi Yogyakarta • 2024</span>
-                            <p class="text-xs text-gray-400 mt-1">Membantu dosen dalam praktikum dan penilaian mata kuliah Keuangan.</p>
-                        </div>
-
-                        <div class="relative pl-6">
-                            <div class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-green-500 rounded-full ring-4 ring-[#121212]"></div>
-                            <h6 class="text-white font-bold text-sm">Internship Program</h6>
-                            <span class="text-xs text-gray-500">PT Syncore Indonesia • 2024</span>
-                            <p class="text-xs text-gray-400 mt-1">Mengaplikasikan ilmu manajemen dalam lingkungan kerja profesional.</p>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-orange-500/30 transition-all">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="text-white font-bold text-sm">Ketua & Koordinator Acara</h5>
+                                <span class="px-2 py-0.5 rounded text-[10px] bg-orange-500/20 text-orange-300 border border-orange-500/30">Leadership</span>
+                            </div>
+                            <ul class="list-disc list-outside ml-4 text-gray-300 text-xs space-y-2 leading-relaxed text-justify">
+                                <li>
+                                    <strong>Koordinator Acara Seminar Nasional Pasar Modal (5 Feb 2024):</strong> Sukses menghadirkan 3 narasumber dari Jakarta & Yogyakarta dengan total <strong>854 peserta</strong> (280 offline, 574 online).
+                                </li>
+                                <li>
+                                    <strong>Ketua Panitia Kunjungan Industri:</strong> Memimpin perencanaan dan eksekusi kegiatan kunjungan ke perusahaan besar.
+                                </li>
+                                <li>
+                                    <strong>Koordinator Sekolah Pasar Modal</strong> di BEI Yogyakarta & Penanggung Jawab kegiatan <em>Sinau Trading Bareng</em>.
+                                </li>
+                            </ul>
                         </div>
 
                     </div>
                 </div>
-                
-                <div class="md:hidden space-y-3 pt-4 border-t border-white/5">
-                    <p class="text-xs font-bold text-gray-500 uppercase">Contact Info</p>
-                    <a href="mailto:dulpansmanagement.offc@gmail.com" class="flex items-center gap-3 text-sm text-gray-300 p-3 bg-white/5 rounded-xl">
-                        <ion-icon name="mail" class="text-orange-yellow-crayola"></ion-icon> dulpansmanagement.offc@gmail.com
-                    </a>
+
+                <div>
+                     <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">Hard & Soft Skills</h3>
+                     <div class="flex flex-wrap gap-2">
+                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Microsoft Office (Word, Excel, PPT)</span>
+                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Google Workspace</span>
+                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Digital Platforms</span>
+                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Adaptif & Komunikatif</span>
+                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Teamwork</span>
+                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Integritas Tinggi</span>
+                         <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white">Public Speaking</span>
+                     </div>
                 </div>
+                
+                <div class="h-10"></div>
 
             </div>
         </div>

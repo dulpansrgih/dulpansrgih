@@ -55,8 +55,6 @@ window.loadPage = function(pageName) {
         
         // --- LOGIC RESPONSIVE: Mobile CV Tab ---
         if (pageName === 'cv' && window.innerWidth < 1024) {
-            // Jika user buka link /#cv tapi di layar mobile:
-            // Tampilkan halaman 'certificate', lalu switch ke tab 'resume'
             mainContent.innerHTML = routes['certificate'];
             currentPage = 'certificate'; // State jadi certificate karena base-nya di situ
             setTimeout(() => {

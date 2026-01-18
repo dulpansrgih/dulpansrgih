@@ -46,12 +46,17 @@ export const certificateContent = `
   </header>
 
   <nav class="md:hidden relative z-30 bg-[#18181b] rounded-xl p-1.5 flex items-center justify-between border border-white/10 mb-4 shadow-lg">
-      <button onclick="window.cert.switchTab('gallery')" id="tab-btn-gallery" class="mobile-tab-btn active flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-white bg-blue-600 shadow-lg shadow-blue-500/30">
+      
+      <button onclick="window.cert.switchTab('gallery')" id="tab-btn-gallery" class="mobile-tab-btn active flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-white bg-blue-600 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+          <ion-icon name="grid-outline" class="text-lg"></ion-icon>
           Certificates
       </button>
-      <button onclick="window.cert.switchTab('resume')" id="tab-btn-resume" class="mobile-tab-btn flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5">
+
+      <button onclick="window.cert.switchTab('resume')" id="tab-btn-resume" class="mobile-tab-btn flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 flex items-center justify-center gap-2">
+          <ion-icon name="document-text-outline" class="text-lg"></ion-icon>
           CV Preview
       </button>
+
   </nav>
 
   <div id="panel-gallery" class="mobile-panel flex flex-col gap-6 animate-fade">
