@@ -1,48 +1,164 @@
 // ==========================================
-// 1. DATA "MORE"
+// 1. DATA "MORE" (Re-categorized to 6 Categories)
 // ==========================================
 const moreData = [
+    // --- 1. EXPERIENCE ---
     {
-      src: "assets/images/1000074216.jpg",
-      title: "Digital Marketing Strategy",
-      category: "workshop", 
+      src: "assets/images/more/Sertifikat Magang PT Syncore Indonesia.png",
+      title: "Magang PT Syncore Indonesia",
+      category: "experience", 
       year: "2024",
-      desc: "Workshop intensif mengenai strategi pemasaran digital dan SEO."
+      desc: "Sertifikat penyelesaian program magang profesional di PT Syncore Indonesia."
     },
     {
-      src: "assets/images/1000074217.jpg",
-      title: "Public Speaking Masterclass",
+      src: "assets/images/more/5210211146 Sertifikat Asisten Dosen.png",
+      title: "Sertifikat Asisten Dosen",
+      category: "experience",
+      year: "2025",
+      desc: "Penghargaan atas dedikasi dan kontribusi sebagai Asisten Dosen Akademik."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi S_Kepengurusan 2023-2024.jpg",
+      title: "Kepengurusan Organisasi",
+      category: "experience",
+      year: "2024",
+      desc: "Bukti keaktifan dan kontribusi dalam kepengurusan organisasi periode 2023-2024."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Visit Company.png",
+      title: "Visit Company Participant",
+      category: "experience",
+      year: "2024",
+      desc: "Partisipasi aktif dalam kegiatan kunjungan industri dan studi lapangan korporat."
+    },
+  
+    // --- 2. LICENSE & CERTIFICATION ---
+    {
+      src: "assets/images/more/Data Engineering Professional - RapidMiner.png",
+      title: "Data Engineering Professional",
+      category: "license-certification",
+      year: "2024",
+      desc: "Sertifikasi profesional kompetensi Data Engineering menggunakan RapidMiner."
+    },
+    {
+      src: "assets/images/more/Machine Learning Professional.png",
+      title: "Machine Learning Professional",
+      category: "license-certification",
+      year: "2024",
+      desc: "Sertifikasi keahlian profesional dalam bidang Machine Learning dan AI."
+    },
+  
+    // --- 3. ORGANIZATION ---
+    {
+      src: "assets/images/more/Sertifikat Pelatihan Kepemimpinan Pengurus Organisasi UTY.png",
+      title: "Pelatihan Kepemimpinan",
+      category: "training",
+      year: "2023",
+      desc: "Pelatihan leadership untuk meningkatkan kapasitas pengurus organisasi UTY."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi S_Sitraba 2024.png",
+      title: "Sitraba 2024",
+      category: "organization",
+      year: "2024",
+      desc: "Sertifikat partisipasi dalam kegiatan Sitraba (Sinau Trading Bareng)."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Seminar Nasional KSPM UTY.png",
+      title: "Seminar Nasional KSPM",
+      category: "organization",
+      year: "2024",
+      desc: "Kepesertaan dalam Seminar Nasional yang diselenggarakan oleh KSPM UTY."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Sekolah Pasar Modal.png",
+      title: "Sekolah Pasar Modal",
+      category: "organization",
+      year: "2024",
+      desc: "Edukasi intensif mengenai investasi dan analisis fundamental pasar modal."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Musyawarah Besar.png",
+      title: "Musyawarah Besar",
+      category: "organization",
+      year: "2023",
+      desc: "Partisipasi dalam forum pengambilan keputusan tertinggi organisasi."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Career Session.png",
+      title: "Career Session",
       category: "course",
-      year: "2023",
-      desc: "Pelatihan teknik komunikasi publik dan presentasi bisnis yang efektif."
+      year: "2024",
+      desc: "Sesi pengembangan karir dan persiapan dunia kerja profesional."
     },
     {
-      src: "assets/images/icon/kspm-uty.jpeg",
-      title: "Capital Market School",
-      category: "seminar",
+      src: "assets/images/more/Dulpan Adi Saragih_Diklatsar 2023.png",
+      title: "Diklatsar 2023",
+      category: "organization",
       year: "2023",
-      desc: "Sekolah Pasar Modal Level 1 & 2 yang diselenggarakan oleh BEI."
+      desc: "Pendidikan dan Latihan Dasar untuk anggota baru organisasi."
     },
     {
-      src: "assets/images/icon/syncore-logo.jpeg",
-      title: "Financial Report Analysis",
+      src: "assets/images/more/Diklatsar KSPM Dulpan Adi Saragih.png",
+      title: "Diklatsar KSPM",
+      category: "organization",
+      year: "2022",
+      desc: "Pelatihan dasar pasar modal bagi anggota Kelompok Studi Pasar Modal."
+    },
+  
+    // --- 4. WORKSHOP & SEMINAR ---
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Literasi Keungan dan Digital UMKM.png",
+      title: "Literasi Keuangan & Digital",
+      category: "workshop-seminar",
+      year: "2024",
+      desc: "Seminar peningkatan literasi keuangan dan digitalisasi bagi UMKM."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Stadium Generale UNY.png",
+      title: "Stadium Generale UNY",
+      category: "workshop-seminar",
+      year: "2024",
+      desc: "Peserta kuliah umum Stadium Generale di Universitas Negeri Yogyakarta."
+    },
+    {
+      src: "assets/images/more/Sertifikat Peserta Gelar Wicara LTF Dulpan Adi Saragih.png",
+      title: "Gelar Wicara LTF",
+      category: "workshop-seminar",
+      year: "2024",
+      desc: "Sertifikat peserta dalam acara talkshow interaktif Gelar Wicara LTF."
+    },
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Seminar Nasional Self Exploration.png",
+      title: "Seminar Self Exploration",
+      category: "workshop-seminar",
+      year: "2023",
+      desc: "Seminar pengembangan diri untuk menggali potensi dan minat bakat."
+    },
+    {
+      src: "assets/images/more/5210211146_Seminar Nasional 2023.png",
+      title: "Seminar Nasional 2023",
+      category: "workshop-seminar",
+      year: "2023",
+      desc: "Partisipasi aktif sebagai peserta dalam Seminar Nasional tahun 2023."
+    },
+
+    // --- 5. TRAINING ---
+    {
+      src: "assets/images/more/Dulpan Adi Saragih_Kompetensi Karir Cemerlang.png",
+      title: "Kompetensi Karir Cemerlang",
       category: "training",
       year: "2024",
-      desc: "Pelatihan analisis laporan keuangan korporat berbasis studi kasus."
+      desc: "Pelatihan strategi membangun kompetensi unggul untuk karir yang cemerlang."
     },
+
+    // --- 6. COURSE ---
     {
-      src: "assets/images/1000074216.jpg",
-      title: "Human Resource Management",
+      src: "assets/images/more/Dulpan Adi Saragih_Class Academy.png",
+      title: "Class Academy",
       category: "course",
-      year: "2022",
-      desc: "Kursus dasar manajemen sumber daya manusia dan tata kelola organisasi."
-    },
-    {
-      src: "assets/images/1000074217.jpg",
-      title: "Basic Data Analysis",
-      category: "workshop",
-      year: "2023",
-      desc: "Pengenalan tools analisis data menggunakan SPSS dan Excel."
+      year: "2024",
+      desc: "Penyelesaian program kursus pembelajaran intensif melalui Class Academy."
     }
   ];
   
@@ -90,17 +206,21 @@ const moreData = [
                 
                 <ul id="more-filter-list" class="hidden absolute top-full left-0 w-full mt-2 bg-[#1e1e24] border border-white/10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden z-[100] flex-col animate-scaleUp origin-top divide-y divide-white/5">
                     <li><button onclick="more.filter('all', 'All Categories')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="grid-outline"></ion-icon> All Categories</button></li>
-                    <li><button onclick="more.filter('workshop', 'Workshop')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="hammer-outline"></ion-icon> Workshop</button></li>
-                    <li><button onclick="more.filter('seminar', 'Seminar')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="mic-outline"></ion-icon> Seminar</button></li>
+                    <li><button onclick="more.filter('experience', 'Experience')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="briefcase-outline"></ion-icon> Experience</button></li>
+                    <li><button onclick="more.filter('license-certification', 'License & Cert')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="ribbon-outline"></ion-icon> License & Cert</button></li>
+                    <li><button onclick="more.filter('organization', 'Organization')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="people-outline"></ion-icon> Organization</button></li>
+                    <li><button onclick="more.filter('workshop-seminar', 'Workshop & Seminar')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="mic-outline"></ion-icon> Workshop & Seminar</button></li>
                     <li><button onclick="more.filter('training', 'Training')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="school-outline"></ion-icon> Training</button></li>
                     <li><button onclick="more.filter('course', 'Course')" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-purple-400 transition-colors flex items-center gap-3"><ion-icon name="book-outline"></ion-icon> Course</button></li>
                 </ul>
             </div>
   
-            <div class="hidden md:flex gap-2 justify-end">
+            <div class="hidden md:flex gap-2 justify-end flex-wrap">
                 <button class="mf-btn active px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('all', null, this)">All</button>
-                <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('workshop', null, this)">Workshop</button>
-                <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('seminar', null, this)">Seminar</button>
+                <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('experience', null, this)">Experience</button>
+                <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('license-certification', null, this)">License</button>
+                <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('organization', null, this)">Organization</button>
+                <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('workshop-seminar', null, this)">Workshop & Seminar</button>
                 <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('training', null, this)">Training</button>
                 <button class="mf-btn px-4 py-2 rounded-xl border border-white/10 text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all [&.active]:bg-purple-600 [&.active]:text-white [&.active]:border-purple-500" onclick="more.filter('course', null, this)">Course</button>
             </div>
@@ -127,7 +247,9 @@ const moreData = [
     
                 <div class="absolute top-2 left-2 md:top-3 md:left-3">
                     <span class="px-1.5 py-0.5 md:px-2 md:py-1 text-[8px] md:text-[9px] font-bold text-purple-300 bg-purple-500/10 backdrop-blur-md rounded-md border border-purple-500/20 uppercase tracking-wide">
-                       ${item.category}
+                       ${item.category === 'license-certification' ? 'License' : 
+                         item.category === 'workshop-seminar' ? 'Seminar' : 
+                         item.category}
                     </span>
                 </div>
     
@@ -228,7 +350,6 @@ const moreData = [
               
               if(label) {
                   document.getElementById('more-current-label').innerText = label;
-                  // Tutup dropdown setelah memilih
                   window.more.toggleDropdown();
               }
   

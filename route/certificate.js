@@ -1,35 +1,84 @@
 // ==========================================
-// 1. DATA SERTIFIKAT
+// 1. DATA CENTER (CUKUP UBAH DISINI)
 // ==========================================
-const certData = [
+
+// A. Konfigurasi CV
+const cvConfig = {
+  file: "assets/cv/Dulpan Adi Saragih.pdf",
+  filename: "Dulpan_Adi_Saragih_CV.pdf", 
+  title: "Curriculum Vitae",
+  subtitle: "Preview Mode"
+};
+
+// B. Daftar Sertifikat (Tambah tanggal di sini)
+const certList = [
   {
-    src: "assets/images/1000074216.jpg",
-    title: "BNSP Certification",
-    category: "license", 
-    desc: "Sertifikasi kompetensi nasional bidang Manajemen SDM yang diakui secara profesional."
+    src: "assets/images/more/Sertifikat Magang PT Syncore Indonesia.png",
+    title: "Magang PT Syncore Indonesia",
+    category: "experience", 
+    desc: "Sertifikasi kompetensi nasional bidang Manajemen SDM yang diakui secara profesional.",
+    date: "16 Juni 2024"
   },
   {
-    src: "assets/images/1000074217.jpg",
-    title: "TOEFL Proficiency",
-    category: "license",
-    desc: "Bukti penguasaan Bahasa Inggris profesional untuk komunikasi bisnis global."
-  },
-  {
-    src: "assets/images/icon/kspm-uty.jpeg",
-    title: "KSPM Leadership",
-    category: "organization",
-    desc: "Pengalaman kepemimpinan strategis sebagai pengurus inti organisasi pasar modal."
-  },
-  {
-    src: "assets/images/icon/syncore-logo.jpeg",
-    title: "Syncore Internship",
+    src: "assets/images/more/5210211146 Sertifikat Asisten Dosen.png",
+    title: "Asisten Dosen",
     category: "experience",
-    desc: "Pengalaman magang profesional menangani proyek keuangan riil di PT Syncore."
-  }
+    desc: "Bukti penguasaan Bahasa Inggris profesional untuk komunikasi bisnis global.",
+    date: "15 Januari 2025"
+  },
+  {
+    src: "assets/images/more/Dulpan Adi S_Kepengurusan 2023-2024.jpg",
+    title: "Bendahara KSPM UTY",
+    category: "experience",
+    desc: "----",
+    date: "23 Oktober 2024"
+  },
+  {
+    src: "assets/images/more/Dulpan Adi Saragih_Visit Company.png",
+    title: "Kunjungan Industri KSPM UTY",
+    category: "organization",
+    desc: "----",
+    date: "12 Juli 2024"
+  },
+  {
+    src: "assets/images/more/Data Engineering Professional - RapidMiner.png",
+    title: "Data Engineering Professional - RapidMiner",
+    category: "license",
+    desc: "----",
+    date: "29 Agustus 2024"
+  },
+  {
+    src: "assets/images/more/Machine Learning Professional.png",
+    title: "Machine Learning Professional",
+    category: "license",
+    desc: "----",
+    date: "29 Agustus 2024"
+  },
+  {
+    src: "assets/images/more/Sertifikat Pelatihan Kepemimpinan Pengurus Organisasi UTY.png",
+    title: "Sertifikat Pelatihan Kepemimpinan Pengurus Organisasi UTY",
+    category: "organization",
+    desc: "----",
+    date: "4 Oktober 2023"
+  },
+  {
+    src: "assets/images/more/Dulpan Adi S_Sitraba 2024.png",
+    title: "Sinau Trading Bareng",
+    category: "organization",
+    desc: "----",
+    date: "11 Mei 2024"
+  },
+  {
+    src: "assets/images/more/Dulpan Adi Saragih_Seminar Nasional KSPM UTY.png",
+    title: "Seminar Nasional KSPM UTY",
+    category: "organization",
+    desc: "----",
+    date: "15 Februari 2024"
+  },
 ];
 
 // ==========================================
-// 2. HTML CONTENT (Main Certificate Page)
+// 2. HTML TEMPLATE
 // ==========================================
 export const certificateContent = `
 <article class="certificate active bg-eerie-black-2/60 backdrop-blur-xl border border-white/10 rounded-[24px] p-5 md:p-10 shadow-2xl z-[1] animate-fade min-h-screen flex flex-col gap-6 relative overflow-hidden">
@@ -43,26 +92,25 @@ export const certificateContent = `
         </h2>
         <div class="h-1 flex-grow bg-gradient-to-r from-blue-500/30 to-transparent rounded-full ml-2"></div>
     </div>
+    
+    <div class="flex items-center gap-2 pl-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+        <p class="text-[11px] md:text-xs text-gray-400 font-medium uppercase tracking-[0.2em]">Achievements & Professional Licenses</p>
+    </div>
   </header>
 
   <nav class="md:hidden relative z-30 bg-[#18181b] rounded-xl p-1.5 flex items-center justify-between border border-white/10 mb-4 shadow-lg">
-      
       <button onclick="window.cert.switchTab('gallery')" id="tab-btn-gallery" class="mobile-tab-btn active flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-white bg-blue-600 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
-          <ion-icon name="grid-outline" class="text-lg"></ion-icon>
-          Certificates
+          <ion-icon name="grid-outline" class="text-lg"></ion-icon> Certificates
       </button>
-
       <button onclick="window.cert.switchTab('resume')" id="tab-btn-resume" class="mobile-tab-btn flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 flex items-center justify-center gap-2">
-          <ion-icon name="document-text-outline" class="text-lg"></ion-icon>
-          CV Preview
+          <ion-icon name="document-text-outline" class="text-lg"></ion-icon> CV Preview
       </button>
-
   </nav>
 
   <div id="panel-gallery" class="mobile-panel flex flex-col gap-6 animate-fade">
       
       <div class="relative z-20">
-        
         <div class="md:hidden relative">
             <button onclick="window.cert.toggleDropdown()" id="mobile-dropdown-btn" class="w-full flex items-center justify-between bg-[#1e1e24] border border-white/10 text-white px-5 py-3 rounded-xl shadow-lg transition-all active:scale-95 group relative z-20">
                 <div class="flex items-center gap-3">
@@ -73,7 +121,6 @@ export const certificateContent = `
                 </div>
                 <ion-icon name="chevron-down" id="dropdown-icon" class="transition-transform duration-300 text-gray-400"></ion-icon>
             </button>
-            
             <ul id="mobile-filter-list" class="hidden absolute top-full left-0 w-full mt-2 bg-[#1e1e24] border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 flex-col animate-scaleUp origin-top divide-y divide-white/5">
                 <li><button onclick="window.cert.filter('all', 'All Certificates', this)" data-icon="apps-outline" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-blue-400 transition-colors flex items-center gap-3"><ion-icon name="apps-outline" class="text-lg"></ion-icon> All Certificates</button></li>
                 <li><button onclick="window.cert.filter('experience', 'Experience', this)" data-icon="briefcase-outline" class="w-full text-left px-5 py-3 text-sm text-gray-400 hover:bg-white/5 hover:text-blue-400 transition-colors flex items-center gap-3"><ion-icon name="briefcase-outline" class="text-lg"></ion-icon> Experience</button></li>
@@ -93,12 +140,12 @@ export const certificateContent = `
       </div>
 
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
-        ${certData.map((item, index) => `
-        <li class="cert-item group relative h-[300px] rounded-3xl overflow-hidden bg-[#18181b] border border-white/5 cursor-pointer shadow-xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2" 
+        ${certList.map((item, index) => `
+        <li class="cert-item group relative h-[320px] rounded-3xl overflow-hidden bg-[#18181b] border border-white/5 cursor-pointer shadow-xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2" 
             data-category="${item.category}" onclick="window.cert.open(${index})">
             
             <img src="${item.src}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-700 ease-in-out">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/80 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
             
             <div class="absolute top-4 left-4">
                 <span class="px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider bg-white/10 backdrop-blur-md rounded-full border border-white/10 shadow-sm">
@@ -113,7 +160,12 @@ export const certificateContent = `
             <div class="absolute bottom-0 left-0 w-full p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <div class="bg-white/5 backdrop-blur-md border border-white/5 p-4 rounded-2xl group-hover:border-white/10 group-hover:bg-white/10 transition-colors">
                     <h3 class="text-white text-lg font-bold leading-tight mb-1 group-hover:text-blue-400 transition-colors line-clamp-1">${item.title}</h3>
-                    <p class="text-gray-400 text-xs line-clamp-2 leading-relaxed">${item.desc}</p>
+                    <p class="text-gray-400 text-xs line-clamp-2 leading-relaxed mb-3">${item.desc}</p>
+                    
+                    <div class="flex items-center gap-2 pt-3 border-t border-white/5 text-[10px] text-gray-500 font-mono group-hover:text-blue-300 transition-colors">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                        <span>Published: ${item.date}</span>
+                    </div>
                 </div>
             </div>
         </li>
@@ -136,21 +188,21 @@ export const certificateContent = `
                   <ion-icon name="document-text" class="text-lg"></ion-icon>
               </div>
               <div>
-                  <h3 class="text-white font-bold text-sm leading-tight">Curriculum Vitae</h3>
-                  <p class="text-[10px] text-blue-400 uppercase tracking-wider font-medium">Preview Mode</p>
+                  <h3 class="text-white font-bold text-sm leading-tight">${cvConfig.title}</h3>
+                  <p class="text-[10px] text-blue-400 uppercase tracking-wider font-medium">${cvConfig.subtitle}</p>
               </div>
           </div>
-          <a href="assets/cv/Dulpan Adi Saragih.pdf" download class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+          <a href="${cvConfig.file}" download="${cvConfig.filename}" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center shadow-lg active:scale-90 transition-transform">
               <ion-icon name="cloud-download" class="text-lg"></ion-icon>
           </a>
       </div>
 
       <div class="w-full flex-grow bg-white rounded-xl overflow-hidden border border-white/10 relative shadow-2xl ring-1 ring-white/20 flex flex-col">
-          <iframe src="assets/cv/Dulpan Adi Saragih.pdf" class="w-full h-full min-h-[400px] border-none block"></iframe>
+          <iframe src="${cvConfig.file}" class="w-full h-full min-h-[400px] border-none block"></iframe>
           <div class="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.1)]"></div>
       </div>
 
-      <a href="assets/cv/Dulpan Adi Saragih.pdf" target="_blank" class="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-[#18181b] border border-white/10 rounded-xl text-gray-300 text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors active:scale-95">
+      <a href="${cvConfig.file}" target="_blank" class="mt-4 flex items-center justify-center gap-2 w-full py-3 bg-[#18181b] border border-white/10 rounded-xl text-gray-300 text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors active:scale-95">
           <ion-icon name="open-outline" class="text-lg"></ion-icon>
           Open Full PDF
       </a>
@@ -164,7 +216,7 @@ export const certificateContent = `
     <div class="absolute top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-50">
         <div class="bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
             <span class="text-gray-400 text-xs tracking-widest uppercase font-mono">
-                <span id="lb-current" class="text-white font-bold">1</span> / <span id="lb-total">4</span>
+                <span id="lb-current" class="text-white font-bold">1</span> / <span id="lb-total">${certList.length}</span>
             </span>
         </div>
         
@@ -202,7 +254,7 @@ export const certificateContent = `
 `;
 
 // ==========================================
-// 4. LOGIC ENGINE
+// 3. LOGIC ENGINE
 // ==========================================
 let currentIndex = 0;
 
@@ -290,7 +342,7 @@ export function initCertificateLogic() {
 
         open: (index) => {
             currentIndex = index;
-            const data = certData[index];
+            const data = certList[index];
             const modal = document.getElementById('theater-modal');
             const img = document.getElementById('lb-img');
             const wrap = document.getElementById('lb-img-wrapper');
@@ -300,7 +352,7 @@ export function initCertificateLogic() {
             document.getElementById('lb-title').innerText = data.title;
             document.getElementById('lb-desc').innerText = data.desc;
             document.getElementById('lb-current').innerText = index + 1;
-            document.getElementById('lb-total').innerText = certData.length;
+            document.getElementById('lb-total').innerText = certList.length;
 
             if(downloadBtn) {
                 downloadBtn.href = data.src;
@@ -330,15 +382,15 @@ export function initCertificateLogic() {
 
         change: (dir) => {
             currentIndex += dir;
-            if(currentIndex >= certData.length) currentIndex = 0;
-            if(currentIndex < 0) currentIndex = certData.length - 1;
+            if(currentIndex >= certList.length) currentIndex = 0;
+            if(currentIndex < 0) currentIndex = certList.length - 1;
             
             const wrap = document.getElementById('lb-img-wrapper');
             wrap.style.opacity = '0';
             wrap.style.transform = 'scale(0.95)';
             
             setTimeout(() => {
-                const data = certData[currentIndex];
+                const data = certList[currentIndex];
                 document.getElementById('lb-img').src = data.src;
                 document.getElementById('lb-title').innerText = data.title;
                 document.getElementById('lb-desc').innerText = data.desc;
@@ -358,7 +410,7 @@ export function initCertificateLogic() {
 }
 
 // ==========================================
-// 5. CV CONTENT (DESKTOP FULLSCREEN MODE)
+// 4. CV CONTENT (DESKTOP FULLSCREEN MODE)
 // ==========================================
 export const cvContent = `
 <div class="fixed inset-0 z-[100] bg-[#0a0a0b] flex flex-col animate-fade">
@@ -372,13 +424,13 @@ export const cvContent = `
             
             <div class="flex flex-col">
                 <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-                   <ion-icon name="document-text" class="text-blue-500"></ion-icon> Curriculum Vitae
+                   <ion-icon name="document-text" class="text-blue-500"></ion-icon> ${cvConfig.title}
                 </h2>
                 <span class="text-[10px] text-gray-400 uppercase tracking-widest font-medium">Dulpan Adi Saragih</span>
             </div>
         </div>
 
-        <a href="assets/cv/Dulpan Adi Saragih.pdf" download class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg active:scale-95 group">
+        <a href="${cvConfig.file}" download="${cvConfig.filename}" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg active:scale-95 group">
             <ion-icon name="cloud-download-outline" class="text-lg group-hover:animate-bounce"></ion-icon>
             <span class="hidden md:inline">Download PDF</span>
         </a>
@@ -389,10 +441,10 @@ export const cvContent = `
          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none"></div>
 
          <div class="w-full h-full md:max-w-[1200px] bg-white md:rounded-xl shadow-2xl overflow-hidden relative border border-white/20 ring-1 ring-black/50">
-             <iframe src="assets/cv/Dulpan Adi Saragih.pdf" class="w-full h-full border-none block">
+             <iframe src="${cvConfig.file}" class="w-full h-full border-none block">
                   <div class="flex flex-col items-center justify-center h-full text-gray-500 gap-4">
                       <p>Browser Anda tidak mendukung preview PDF.</p>
-                      <a href="assets/cv/Dulpan Adi Saragih.pdf" class="text-blue-500 underline">Download disini</a>
+                      <a href="${cvConfig.file}" class="text-blue-500 underline">Download disini</a>
                   </div>
              </iframe>
          </div>
