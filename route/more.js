@@ -1,171 +1,213 @@
 // ==========================================
-// 1. DATA "MORE" (Re-categorized to 6 Categories)
+// 1. DATA "MORE"
 // ==========================================
 const moreData = [
     // --- 1. EXPERIENCE ---
     {
       src: "assets/images/more/Sertifikat Magang PT Syncore Indonesia.png",
       title: "Magang PT Syncore Indonesia",
+      title_en: "Internship PT Syncore Indonesia",
       category: "experience", 
       year: "2024",
-      desc: "Sertifikat penyelesaian program magang profesional di PT Syncore Indonesia."
+      desc: "Menyelesaikan program magang di divisi BUMDes.id dengan fokus pada pendampingan tata kelola dan digitalisasi BUM Desa nasional.",
+      desc_en: "Completed internship program at BUMDes.id division focusing on governance mentoring and digitalization of National Village-Owned Enterprises."
     },
     {
       src: "assets/images/more/5210211146 Sertifikat Asisten Dosen.png",
       title: "Sertifikat Asisten Dosen",
+      title_en: "Lecturer Assistant Certificate",
       category: "experience",
       year: "2025",
-      desc: "Penghargaan atas dedikasi dan kontribusi sebagai Asisten Dosen Akademik."
+      desc: "Dipercaya sebagai Asisten Dosen untuk mengajar, membimbing, dan mengevaluasi mahasiswa pada mata kuliah Manajemen Keuangan Praktik.",
+      desc_en: "Trusted as a Lecturer Assistant to teach, guide, and evaluate students in the Financial Management Practice course."
     },
     {
       src: "assets/images/more/Dulpan Adi S_Kepengurusan 2023-2024.jpg",
       title: "Kepengurusan Organisasi",
+      title_en: "Organizational Board",
       category: "experience",
       year: "2024",
-      desc: "Bukti keaktifan dan kontribusi dalam kepengurusan organisasi periode 2023-2024."
+      desc: "Berperan aktif dalam manajemen organisasi KSPM sebagai Bendahara Umum, mengelola anggaran dan laporan keuangan strategis.",
+      desc_en: "Actively involved in KSPM organizational management as General Treasurer, managing budgets and strategic financial reports."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Visit Company.png",
       title: "Visit Company Participant",
+      title_en: "Visit Company Participant",
       category: "experience",
       year: "2024",
-      desc: "Partisipasi aktif dalam kegiatan kunjungan industri dan studi lapangan korporat."
+      desc: "Melakukan studi lapangan langsung ke perusahaan untuk memahami operasional bisnis riil dan budaya kerja profesional.",
+      desc_en: "Conducted direct field studies to companies to understand real business operations and professional work culture."
     },
   
     // --- 2. LICENSE & CERTIFICATION ---
     {
       src: "assets/images/more/Data Engineering Professional - RapidMiner.png",
       title: "Data Engineering Professional",
+      title_en: "Data Engineering Professional",
       category: "license-certification",
       year: "2024",
-      desc: "Sertifikasi profesional kompetensi Data Engineering menggunakan RapidMiner."
+      desc: "Sertifikasi kompetensi teknis dalam pengolahan data (ETL) menggunakan RapidMiner untuk persiapan analisis bisnis.",
+      desc_en: "Technical competency certification in data processing (ETL) using RapidMiner for business analysis preparation."
     },
     {
       src: "assets/images/more/Machine Learning Professional.png",
       title: "Machine Learning Professional",
+      title_en: "Machine Learning Professional",
       category: "license-certification",
       year: "2024",
-      desc: "Sertifikasi keahlian profesional dalam bidang Machine Learning dan AI."
+      desc: "Pengakuan keahlian dalam menerapkan model Machine Learning untuk prediksi data dan pengambilan keputusan strategis.",
+      desc_en: "Recognition of expertise in applying Machine Learning models for data prediction and strategic decision making."
     },
   
     // --- 3. ORGANIZATION ---
     {
       src: "assets/images/more/Sertifikat Pelatihan Kepemimpinan Pengurus Organisasi UTY.png",
       title: "Pelatihan Kepemimpinan",
+      title_en: "Leadership Training",
       category: "training",
       year: "2023",
-      desc: "Pelatihan leadership untuk meningkatkan kapasitas pengurus organisasi UTY."
+      desc: "Program intensif pengembangan karakter leadership dan manajemen tim untuk mencetak pengurus organisasi yang berintegritas.",
+      desc_en: "Intensive program for leadership character development and team management to create integrity-driven organizational administrators."
     },
     {
       src: "assets/images/more/Dulpan Adi S_Sitraba 2024.png",
       title: "Sitraba 2024",
+      title_en: "Sitraba 2024",
       category: "organization",
       year: "2024",
-      desc: "Sertifikat partisipasi dalam kegiatan Sitraba (Sinau Trading Bareng)."
+      desc: "Kegiatan edukasi 'Sinau Trading Bareng' untuk memperdalam analisis teknikal saham dan strategi investasi pasar modal.",
+      desc_en: "'Sinau Trading Bareng' educational activity to deepen stock technical analysis and capital market investment strategies."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Seminar Nasional KSPM UTY.png",
       title: "Seminar Nasional KSPM",
+      title_en: "KSPM National Seminar",
       category: "organization",
       year: "2024",
-      desc: "Kepesertaan dalam Seminar Nasional yang diselenggarakan oleh KSPM UTY."
+      desc: "Forum diskusi nasional mengenai isu ekonomi terkini dan strategi investasi cerdas di era digital.",
+      desc_en: "National discussion forum on current economic issues and smart investment strategies in the digital era."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Sekolah Pasar Modal.png",
       title: "Sekolah Pasar Modal",
+      title_en: "Capital Market School",
       category: "organization",
       year: "2024",
-      desc: "Edukasi intensif mengenai investasi dan analisis fundamental pasar modal."
+      desc: "Pelatihan komprehensif dari Bursa Efek Indonesia mengenai mekanisme perdagangan saham dan analisis fundamental emiten.",
+      desc_en: "Comprehensive training from the Indonesia Stock Exchange regarding stock trading mechanisms and fundamental issuer analysis."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Musyawarah Besar.png",
       title: "Musyawarah Besar",
+      title_en: "Grand Deliberation",
       category: "organization",
       year: "2023",
-      desc: "Partisipasi dalam forum pengambilan keputusan tertinggi organisasi."
+      desc: "Terlibat dalam forum pengambilan keputusan tertinggi organisasi untuk merumuskan AD/ART dan arah kebijakan strategis.",
+      desc_en: "Involved in the organization's highest decision-making forum to formulate bylaws and strategic policy directions."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Career Session.png",
       title: "Career Session",
+      title_en: "Career Session",
       category: "course",
       year: "2024",
-      desc: "Sesi pengembangan karir dan persiapan dunia kerja profesional."
+      desc: "Workshop persiapan karir yang membahas strategi pembuatan CV, interview kerja, dan personal branding profesional.",
+      desc_en: "Career preparation workshop discussing strategies for CV creation, job interviews, and professional personal branding."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Diklatsar 2023.png",
       title: "Diklatsar 2023",
+      title_en: "Basic Training 2023",
       category: "organization",
       year: "2023",
-      desc: "Pendidikan dan Latihan Dasar untuk anggota baru organisasi."
+      desc: "Pendidikan dan Latihan Dasar untuk membangun mentalitas, disiplin, dan pemahaman dasar organisasi bagi anggota baru.",
+      desc_en: "Basic Education and Training to build mentality, discipline, and basic organizational understanding for new members."
     },
     {
       src: "assets/images/more/Diklatsar KSPM Dulpan Adi Saragih.png",
       title: "Diklatsar KSPM",
+      title_en: "KSPM Basic Training",
       category: "organization",
       year: "2022",
-      desc: "Pelatihan dasar pasar modal bagi anggota Kelompok Studi Pasar Modal."
+      desc: "Pelatihan fundamental pasar modal sebagai syarat kompetensi dasar bagi anggota Kelompok Studi Pasar Modal.",
+      desc_en: "Fundamental capital market training as a basic competency requirement for Capital Market Study Group members."
     },
   
     // --- 4. WORKSHOP & SEMINAR ---
     {
       src: "assets/images/more/Dulpan Adi Saragih_Literasi Keungan dan Digital UMKM.png",
       title: "Literasi Keuangan & Digital",
+      title_en: "Financial & Digital Literacy",
       category: "workshop-seminar",
       year: "2024",
-      desc: "Seminar peningkatan literasi keuangan dan digitalisasi bagi UMKM."
+      desc: "Seminar edukasi strategi pengelolaan keuangan dan adopsi teknologi digital untuk pengembangan skala bisnis UMKM.",
+      desc_en: "Educational seminar on financial management strategies and digital technology adoption for MSME business scaling."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Stadium Generale UNY.png",
       title: "Stadium Generale UNY",
+      title_en: "Stadium Generale UNY",
       category: "workshop-seminar",
       year: "2024",
-      desc: "Peserta kuliah umum Stadium Generale di Universitas Negeri Yogyakarta."
+      desc: "Partisipasi dalam kuliah umum yang membahas wawasan multidisiplin dan isu-isu strategis nasional.",
+      desc_en: "Participation in a public lecture discussing multidisciplinary insights and national strategic issues."
     },
     {
       src: "assets/images/more/Sertifikat Peserta Gelar Wicara LTF Dulpan Adi Saragih.png",
       title: "Gelar Wicara LTF",
+      title_en: "LTF Talk Show",
       category: "workshop-seminar",
       year: "2024",
-      desc: "Sertifikat peserta dalam acara talkshow interaktif Gelar Wicara LTF."
+      desc: "Diskusi interaktif 'Gelar Wicara' yang membahas tren kepemimpinan dan inovasi dalam organisasi masa kini.",
+      desc_en: "Interactive 'Talk Show' discussion covering leadership trends and innovation in modern organizations."
     },
     {
       src: "assets/images/more/Dulpan Adi Saragih_Seminar Nasional Self Exploration.png",
       title: "Seminar Self Exploration",
+      title_en: "Self Exploration Seminar",
       category: "workshop-seminar",
       year: "2023",
-      desc: "Seminar pengembangan diri untuk menggali potensi dan minat bakat."
+      desc: "Seminar pengembangan diri untuk mengenali potensi, minat, dan bakat guna merancang peta jalan karir masa depan.",
+      desc_en: "Self-development seminar to recognize potential, interests, and talents for designing future career roadmaps."
     },
     {
       src: "assets/images/more/5210211146_Seminar Nasional 2023.png",
       title: "Seminar Nasional 2023",
+      title_en: "National Seminar 2023",
       category: "workshop-seminar",
       year: "2023",
-      desc: "Partisipasi aktif sebagai peserta dalam Seminar Nasional tahun 2023."
+      desc: "Forum akademik nasional yang mempertemukan praktisi dan akademisi untuk berbagi wawasan terbaru di bidang manajemen.",
+      desc_en: "National academic forum bringing together practitioners and academics to share the latest insights in management."
     },
 
     // --- 5. TRAINING ---
     {
       src: "assets/images/more/Dulpan Adi Saragih_Kompetensi Karir Cemerlang.png",
       title: "Kompetensi Karir Cemerlang",
+      title_en: "Brilliant Career Competency",
       category: "training",
       year: "2024",
-      desc: "Pelatihan strategi membangun kompetensi unggul untuk karir yang cemerlang."
+      desc: "Pelatihan intensif mengenai pemetaan skill yang dibutuhkan industri untuk membangun jalur karir yang sukses.",
+      desc_en: "Intensive training on mapping industry-required skills to build a successful career path."
     },
 
     // --- 6. COURSE ---
     {
       src: "assets/images/more/Dulpan Adi Saragih_Class Academy.png",
       title: "Class Academy",
+      title_en: "Class Academy",
       category: "course",
       year: "2024",
-      desc: "Penyelesaian program kursus pembelajaran intensif melalui Class Academy."
+      desc: "Menyelesaikan rangkaian kursus online untuk peningkatan hard skill dan soft skill di bidang profesional.",
+      desc_en: "Completed a series of online courses for hard skill and soft skill enhancement in the professional field."
     }
   ];
   
   // ==========================================
   // 2. HTML CONTENT
   // ==========================================
-  export const moreContent = `
+  const contentOriginal = `
   <article class="more-certs active bg-eerie-black-2/60 backdrop-blur-xl border border-white/10 rounded-[24px] p-5 md:p-10 shadow-2xl z-[1] animate-fade min-h-screen flex flex-col gap-6 relative overflow-hidden">
     
     <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] -z-10 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -181,7 +223,7 @@ const moreData = [
             <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
               Certificate <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Vault</span>
             </h2>
-            <p class="text-xs text-gray-400 mt-1">Arsip lengkap sertifikasi & kegiatan.</p>
+            <p class="text-xs text-gray-400 mt-1" data-en="Organizational, Academic & Activity Certificates">Sertifikat Orgnisasi, Akademik, & Kegiatan</p>
           </div>
       </div>
   
@@ -254,8 +296,8 @@ const moreData = [
                 </div>
     
                 <div class="absolute bottom-0 left-0 w-full p-3 md:p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 class="text-white text-xs md:text-md font-bold leading-tight mb-0.5 md:mb-1 group-hover:text-purple-300 transition-colors line-clamp-1 filter-title">${item.title}</h3>
-                    <p class="text-gray-400 text-[9px] md:text-[10px] line-clamp-2 leading-relaxed filter-desc">${item.desc}</p>
+                    <h3 class="text-white text-xs md:text-md font-bold leading-tight mb-0.5 md:mb-1 group-hover:text-purple-300 transition-colors line-clamp-1 filter-title" data-en="${item.title_en}">${item.title}</h3>
+                    <p class="text-gray-400 text-[9px] md:text-[10px] line-clamp-2 leading-relaxed filter-desc" data-en="${item.desc_en}">${item.desc}</p>
                 </div>
             </li>
            `).join('')}
@@ -383,9 +425,12 @@ const moreData = [
               const modal = document.getElementById('more-modal');
               const wrapper = document.getElementById('more-img-wrapper');
               const dlBtn = document.getElementById('more-dl-btn');
+
+              // Periksa bahasa saat ini untuk title/desc di modal (mengambil dari localStorage yang diset oleh main.js)
+              const isEn = localStorage.getItem('appLang') === 'en';
   
               document.getElementById('more-img').src = data.src;
-              document.getElementById('more-title').innerText = data.title;
+              document.getElementById('more-title').innerText = isEn ? data.title_en : data.title;
               document.getElementById('more-cat').innerText = data.category;
               
               // Set Download Link
@@ -426,8 +471,10 @@ const moreData = [
   
               setTimeout(() => {
                   const data = moreData[currentMoreIndex];
+                  const isEn = localStorage.getItem('appLang') === 'en';
+
                   document.getElementById('more-img').src = data.src;
-                  document.getElementById('more-title').innerText = data.title;
+                  document.getElementById('more-title').innerText = isEn ? data.title_en : data.title;
                   document.getElementById('more-cat').innerText = data.category;
                   
                   // Update Download Link saat next/prev
@@ -443,3 +490,12 @@ const moreData = [
           }
       };
   }
+
+const createEnVer = (htmlString) => {
+    const parser = document.createElement('div');
+    parser.innerHTML = htmlString;
+    parser.querySelectorAll('[data-en]').forEach(el => { el.innerHTML = el.getAttribute('data-en'); });
+    return parser.innerHTML;
+};
+
+export const moreContent = { id: contentOriginal, en: createEnVer(contentOriginal) };

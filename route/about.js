@@ -1,4 +1,4 @@
-export const aboutContent = `
+const contentOriginal = `
 <style>
   /* SCROLLBAR ESTETIK */
   .scrollbar-estetik::-webkit-scrollbar {
@@ -50,7 +50,7 @@ export const aboutContent = `
     
     <div class="flex items-center gap-2 pl-1">
         <span class="w-1.5 h-1.5 rounded-full bg-orange-yellow-crayola animate-pulse"></span>
-        <p class="text-[11px] md:text-xs text-gray-400 font-medium uppercase tracking-[0.2em]">Bachelor of Management • HR Specialist</p>
+        <p class="text-[11px] md:text-xs text-gray-400 font-medium uppercase tracking-[0.2em]">Bachelor of Management</p>
     </div>
   </header>
 
@@ -58,27 +58,24 @@ export const aboutContent = `
     <div class="flex-1 space-y-6 text-center md:text-left order-2 md:order-1">
         <div>
             <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              Human Capital <br>
-              <span class="text-gray-400">Strategist.</span>
+              Dulpan Adi Saragih<br>
+              <span class="text-gray-400">Human Capital Management</span>
             </h1>
         </div>
         
         <div class="text-gray-300 text-sm md:text-[16px] leading-relaxed max-w-2xl mx-auto md:mx-0 space-y-5 text-justify md:text-left">
-            <p>
-               Halo! Saya <strong class="text-white font-bold text-lg">Dulpan Adi Saragih</strong>.
-            </p>
-            <p>
+            <p data-en="I am a graduate of Universitas Teknologi Yogyakarta (UTY) majoring in Management with a concentration in Human Resource Management (HRM).">
                Saya adalah lulusan <strong class="text-orange-yellow-crayola">Universitas Teknologi Yogyakarta (UTY)</strong> jurusan Manajemen dengan konsentrasi <strong class="text-orange-yellow-crayola">Manajemen Sumber Daya Manusia (MSDM)</strong>.
             </p>
-            <p>
-               Saya dikenal sebagai pribadi yang adaptif, komunikatif, dan berintegritas tinggi. Selain fokus pada pengelolaan SDM, saya memiliki semangat belajar tinggi untuk menghadapi tantangan baru dalam dunia bisnis dan profesional.
+            <p data-en="I combine strong communication skills with high integrity to face challenges in the working world. Always excited to learn new things and ready to provide positive energy in a dynamic professional environment!">
+               Saya mengombinasikan kemampuan komunikasi yang baik dengan integritas tinggi untuk menghadapi tantangan di dunia kerja. Always excited untuk mempelajari hal baru dan siap memberikan energi positif di lingkungan profesional yang dinamis!.
             </p>
         </div>
 
         <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
             <button onclick="window.toggleAboutModal(true)" 
                     class="group px-6 py-3 bg-gradient-to-r from-orange-yellow-crayola to-amber-600 text-jet font-bold rounded-xl shadow-[0_0_20px_rgba(255,180,0,0.3)] hover:shadow-[0_0_30px_rgba(255,180,0,0.5)] hover:scale-105 transition-all active:scale-95 flex items-center gap-2">
-                <span>View Full Profile</span>
+                <span data-en="View Full Profile">Lihat Profil Lengkap</span>
                 <ion-icon name="arrow-forward-circle" class="text-xl group-hover:rotate-45 transition-transform"></ion-icon>
             </button>
             <a href="https://linkedin.openinapp.co/dulpansrgih" target="_blank" class="px-6 py-3 bg-white/5 border border-white/10 text-white font-medium rounded-xl hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2 group">
@@ -93,78 +90,78 @@ export const aboutContent = `
         <div class="relative w-full h-full bg-[#1e1e24] border border-white/10 rounded-[30px] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 group">
             <img src="assets/images/icon/myprof.jpg" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" alt="Dulpan Adi">
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
-                <p class="text-xs text-orange-yellow-crayola font-bold tracking-widest mb-1">MSDM • FINANCE</p>
-                <p class="text-white font-bold text-xl leading-none">Yogyakarta, ID</p>
+                <p class="text-xs text-orange-yellow-crayola font-bold tracking-widest mb-1">Human Capital • Finance</p>
+                <p class="text-white font-bold text-xl leading-none">• Marketing * Buesiness</p>
             </div>
         </div>
     </div>
   </section>
 
   <section class="mt-4">
-      <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 border-l-4 border-orange-yellow-crayola pl-3">Areas of Expertise</h3>
+      <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4 border-l-4 border-orange-yellow-crayola pl-3" data-en="Expertise Area">Bidang Keahlian</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
           
           <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
               <ion-icon name="people-circle-outline" class="text-3xl text-orange-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-              <h3 class="text-white font-bold text-sm mb-1">Human Capital</h3>
-              <p class="text-gray-400 text-[11px] leading-relaxed">Talent Acquisition, Development, & Organizational Effectiveness.</p>
+              <h3 class="text-white font-bold text-sm mb-1" data-en="HR Management">Manajemen SDM</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed" data-en="Focuses on the HR cycle management, from talent acquisition to designing development programs to ensure every individual can contribute their best for organizational effectiveness.">Berfokus pada manajemen siklus SDM, mulai dari akuisisi talenta hingga perancangan program pengembangan untuk memastikan setiap individu mampu memberikan kontribusi terbaik bagi efektivitas organisasi.</p>
           </div>
 
           <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
               <ion-icon name="wallet-outline" class="text-3xl text-green-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-              <h3 class="text-white font-bold text-sm mb-1">Finance</h3>
-              <p class="text-gray-400 text-[11px] leading-relaxed">Financial Analysis, Budgeting (Bendahara), & Reporting.</p>
+              <h3 class="text-white font-bold text-sm mb-1" data-en="Financial Management">Manajemen Keuangan</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed" data-en="Capable in financial analysis and accurate budgeting, with a commitment to maintaining accountability and efficiency in corporate resource usage.">Memiliki kapabilitas dalam analisis finansial dan penyusunan anggaran yang akurat, dengan komitmen untuk menjaga akuntabilitas serta efisiensi penggunaan sumber daya perusahaan</p>
           </div>
 
           <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
               <ion-icon name="trending-up-outline" class="text-3xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-              <h3 class="text-white font-bold text-sm mb-1">Business Dev</h3>
-              <p class="text-gray-400 text-[11px] leading-relaxed">Event Management, Strategic Planning, & Market Research.</p>
+              <h3 class="text-white font-bold text-sm mb-1" data-en="Business & Marketing">Manajemen Bisnis & Pemasaran</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed" data-en="Able to translate market research into concrete strategic plans, and experienced in managing large-scale activities to strengthen business position in the market.">Mampu menerjemahkan riset pasar menjadi rencana strategis yang konkret, serta berpengalaman dalam mengelola berbagai kegiatan berskala besar untuk memperkuat posisi bisnis di pasar.</p>
           </div>
 
           <div class="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/[0.07] transition-all group">
               <ion-icon name="shield-checkmark-outline" class="text-3xl text-purple-400 mb-3 group-hover:scale-110 transition-transform"></ion-icon>
-              <h3 class="text-white font-bold text-sm mb-1">Leadership</h3>
-              <p class="text-gray-400 text-[11px] leading-relaxed">Team Management, Integrity, & Adaptability in fast-paced env.</p>
+              <h3 class="text-white font-bold text-sm mb-1" data-en="Leadership & Integrity">Kepemimpinan & Integritas</h3>
+              <p class="text-gray-400 text-[11px] leading-relaxed" data-en="Highly dedicated to work integrity and team managerial skills in a dynamic environment, focusing on creating synergy and achieving collective targets.">Memiliki dedikasi tinggi terhadap integritas kerja dan kemampuan manajerial tim dalam lingkungan yang dinamis, dengan fokus pada penciptaan sinergi dan pencapaian target kolektif.</p>
           </div>
       </div>
   </section>
 
   <section class="mt-2 pb-6">
-       <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-5 border-l-4 border-blue-500 pl-3">Professional Journey</h3>
+       <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-5 border-l-4 border-blue-500 pl-3" data-en="Career Achievement">Pencapaian Karir</h3>
        
        <div class="timeline-line relative grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 pl-4 md:pl-0">
            
            <div class="relative pl-6 md:pl-0 md:pt-6 group">
                <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-orange-yellow-crayola border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
                <div class="hidden md:block absolute top-2 left-0 w-full h-[2px] bg-white/10 -z-0"></div>
-               <h4 class="text-white font-bold text-sm">Graduation</h4>
-               <span class="text-[10px] text-orange-yellow-crayola font-mono">2025 • UTY</span>
-               <p class="text-gray-400 text-[11px] mt-1">Bachelor of Management (MSDM).</p>
+               <h4 class="text-white font-bold text-sm" data-en="Graduation">Kelulusan</h4>
+               <span class="text-[10px] text-orange-yellow-crayola font-mono">2025 • Universitas Teknologi Yogyakarta</span>
+               <p class="text-gray-400 text-[11px] mt-1" data-en="Graduated with GPA 3.54. Actively balanced academic achievement with self-development through various organizations.">Lulus dengan IPK 3,54. Selama masa studi, aktif menyeimbangkan pencapaian akademik dengan pengembangan diri melalui berbagai kegiatan organisasi.</p>
            </div>
 
            <div class="relative pl-6 md:pl-0 md:pt-6 group">
                <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
                <div class="hidden md:block absolute top-2 left-0 w-full h-[2px] bg-white/10 -z-0"></div>
-               <h4 class="text-white font-bold text-sm">Assistant Lecturer</h4>
-               <span class="text-[10px] text-blue-400 font-mono">2024 • Finance</span>
-               <p class="text-gray-400 text-[11px] mt-1">Teaching & Mentoring Students.</p>
+               <h4 class="text-white font-bold text-sm" data-en="Lecturer Assistant">Asisten Dosen</h4>
+               <span class="text-[10px] text-blue-400 font-mono" data-en="2025 • Financial Management">2025 • Manajemen Keuangan</span>
+               <p class="text-gray-400 text-[11px] mt-1" data-en="Assisted student academic development through intensive teaching and mentoring sessions in Finance courses.">Membantu pengembangan akademik mahasiswa melalui sesi pengajaran dan mentoring intensif pada mata kuliah Keuangan</p>
            </div>
 
            <div class="relative pl-6 md:pl-0 md:pt-6 group">
                <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-green-500 border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
                <div class="hidden md:block absolute top-2 left-0 w-full h-[2px] bg-white/10 -z-0"></div>
-               <h4 class="text-white font-bold text-sm">Internship</h4>
-               <span class="text-[10px] text-green-400 font-mono">2024 • Syncore</span>
-               <p class="text-gray-400 text-[11px] mt-1">Professional Work Experience.</p>
+               <h4 class="text-white font-bold text-sm" data-en="Internship">Magang</h4>
+               <span class="text-[10px] text-green-400 font-mono">2024 • PT Syncore Indonesia</span>
+               <p class="text-gray-400 text-[11px] mt-1" data-en="BUM Desa Development Consultant. Played a role in strategic initiatives to grow and strengthen BUM Desa governance across Indonesia through intensive mentoring.">Konsultan Pengembangan BUM Desa (Bumdes.Id) Berperan dalam inisiatif strategis untuk menumbuhkan dan memperkuat tata kelola BUM Desa di seluruh Indonesia melalui pendampingan intensif.</p>
            </div>
 
            <div class="relative pl-6 md:pl-0 md:pt-6 group">
                <div class="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-purple-500 border-2 border-[#1e1e24] z-10 group-hover:scale-125 transition-transform"></div>
                <div class="hidden md:block absolute top-2 left-0 w-1/2 h-[2px] bg-white/10 -z-0"></div>
-               <h4 class="text-white font-bold text-sm">Treasurer</h4>
-               <span class="text-[10px] text-purple-400 font-mono">2023 • KSPM</span>
-               <p class="text-gray-400 text-[11px] mt-1">Budgeting & Financial Reports.</p>
+               <h4 class="text-white font-bold text-sm" data-en="General Treasurer">Bendahara Umum</h4>
+               <span class="text-[10px] text-purple-400 font-mono">2024 • KSPM UTY</span>
+               <p class="text-gray-400 text-[11px] mt-1" data-en="Responsible for organizational financial stability through strategic budgeting and transparent financial reporting.">Bertanggung jawab atas stabilitas finansial organisasi melalui penganggaran yang strategis dan pelaporan keuangan yang transparan.</p>
            </div>
 
        </div>
@@ -182,8 +179,8 @@ export const aboutContent = `
 
         <div class="md:hidden pt-8 pb-4 px-6 border-b border-white/5 bg-[#18181b] shrink-0 flex items-center justify-between">
             <div>
-                <h3 class="text-2xl font-bold text-white tracking-tight">Profile Details</h3>
-                <p class="text-xs text-gray-400">MSDM • Finance • Marketing</p>
+                <h3 class="text-2xl font-bold text-white tracking-tight" data-en="Profile Details">Detail Profil</h3>
+                <p class="text-xs text-gray-400">Human Capital • Finance • Marketing</p>
             </div>
             <button onclick="window.toggleAboutModal(false)" class="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center active:scale-90 transition-transform">
                 <ion-icon name="close" class="text-xl"></ion-icon>
@@ -218,7 +215,7 @@ export const aboutContent = `
                         </div>
                         <button onclick="window.open('http://verifikasi.uty.ac.id/lulusan/02OE53F4KR1QM26ZULVI0GA9TX7B8YJP146', '_blank')" 
                                 class="flex-1 flex items-center justify-center gap-2 py-2 text-gray-400 hover:text-green-400 hover:bg-white/5 rounded-r-lg transition-all group">
-                            <span class="text-xs font-bold uppercase tracking-wide">Verifikasi Ijazah</span>
+                            <span class="text-xs font-bold uppercase tracking-wide" data-en="Verify Diploma">Verifikasi Ijazah</span>
                             <ion-icon name="arrow-forward" class="text-xs group-hover:translate-x-1 transition-transform"></ion-icon>
                         </button>
                     </div>
@@ -241,7 +238,7 @@ export const aboutContent = `
                         <div class="flex items-center gap-4 group">
                             <div class="w-10 h-10 rounded-lg bg-white/5 group-hover:bg-red-500/20 flex items-center justify-center text-red-400 transition-colors shrink-0 border border-white/5"><ion-icon name="location"></ion-icon></div>
                             <div>
-                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Location</p>
+                                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider" data-en="Location">Lokasi</p>
                                 <p class="text-gray-300 text-xs font-medium">Yogyakarta, Indonesia</p>
                             </div>
                         </div>
@@ -296,7 +293,7 @@ export const aboutContent = `
                              <p class="text-orange-yellow-crayola text-xs font-mono uppercase">IPK 3.54 • Fresh Graduate</p>
                              <button onclick="window.open('http://verifikasi.uty.ac.id/lulusan/02OE53F4KR1QM26ZULVI0GA9TX7B8YJP146', '_blank')" 
                                 class="inline-flex items-center gap-1 px-2 py-1 rounded bg-blue-500/10 border border-blue-500/20 text-[9px] font-medium text-blue-300">
-                                <ion-icon name="checkmark-circle"></ion-icon> Verifikasi
+                                <ion-icon name="checkmark-circle"></ion-icon> <span data-en="Verify">Verifikasi</span>
                              </button>
                         </div>
                     </div>
@@ -305,64 +302,78 @@ export const aboutContent = `
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-900/20 to-indigo-900/10 border border-blue-500/20 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><ion-icon name="library" class="text-6xl text-blue-500"></ion-icon></div>
                     <h4 class="text-blue-400 font-bold text-sm mb-2 uppercase tracking-wider flex items-center gap-2">
-                        <ion-icon name="ribbon"></ion-icon> Academic Excellence
+                        <ion-icon name="ribbon"></ion-icon> <span data-en="Academic Achievement">Pencapaian Akademik</span>
                     </h4>
-                    <h5 class="text-white font-bold text-lg mb-2">Asisten Dosen - Manajemen Keuangan Praktik</h5>
-                    <p class="text-gray-300 text-xs leading-relaxed text-justify mb-2">
+                    <h5 class="text-white font-bold text-lg mb-2" data-en="Lecturer Assistant - Financial Management">Asisten Dosen - Manajemen Keuangan Praktik</h5>
+                    <p class="text-gray-300 text-xs leading-relaxed text-justify mb-2" data-en="I was entrusted to be a Lecturer Assistant which demanded high precision, good communication skills, and deep understanding of the material.">
                         Saya dipercaya menjadi Asisten Dosen yang menuntut <strong>ketelitian tinggi</strong>, kemampuan <strong>komunikasi yang baik</strong>, serta pemahaman mendalam terhadap materi. 
                     </p>
-                    <p class="text-gray-400 text-xs leading-relaxed text-justify">
+                    <p class="text-gray-400 text-xs leading-relaxed text-justify" data-en="This role trained me in mentoring other students, explaining complex concepts simply, and maintaining high academic standards.">
                         Peran ini melatih saya dalam membimbing mahasiswa lain (mentoring), menjelaskan konsep kompleks menjadi sederhana, dan menjaga standar akademik yang tinggi.
                     </p>
                 </div>
 
                 <div>
                      <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-pink-500 rounded-full"></span> Career Aspirations
+                        <span class="w-1 h-6 bg-pink-500 rounded-full"></span> 
+                        <ion-icon name="rocket" class="text-pink-500 text-xl"></ion-icon>
+                        <span data-en="Career Aspirations">Aspirasi Karier</span>
                     </h3>
                     <div class="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-pink-500/30 transition-all">
-                        <p class="text-gray-300 text-xs leading-7 text-justify">
-                            Sebagai lulusan baru dengan latar belakang Manajemen yang kuat, saya memiliki ambisi untuk mengembangkan karir profesional di bidang <strong>Human Capital</strong>, <strong>General Affair</strong>, atau <strong>Administrasi Keuangan</strong>. Saya siap berkontribusi dengan etos kerja tinggi, kemampuan adaptasi cepat, dan keinginan untuk terus belajar.
+                        <p class="text-gray-300 text-xs leading-7 text-justify" data-en="As a fresh graduate with a strong Management background, I have ambitions to develop a professional career in Human Resources, General Affairs, or Financial Administration. I am ready to contribute with high work ethics, fast adaptability, and a desire to keep learning.">
+                            Sebagai lulusan baru dengan latar belakang Manajemen yang kuat, saya memiliki ambisi untuk mengembangkan karir profesional di bidang <strong>Sumber Daya</strong>, <strong>Divisi Umum</strong>, atau <strong>Administrasi Keuangan</strong>. Saya siap berkontribusi dengan etos kerja tinggi, kemampuan adaptasi cepat, dan keinginan untuk terus belajar serta semangat untuk terus berkembang di lingkungan yang dinamis.
                         </p>
                         <div class="flex flex-wrap gap-2 mt-4">
                             <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">HR Generalist</span>
                             <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">Finance Staff</span>
-                            <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">Admin</span>
+                            <span class="px-2 py-1 bg-pink-500/10 text-pink-300 text-[10px] rounded border border-pink-500/20">Administrative</span>
                         </div>
                     </div>
                 </div>
 
                 <div>
                      <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-orange-yellow-crayola rounded-full"></span> Organizational & Committee
+                        <span class="w-1 h-6 bg-orange-yellow-crayola rounded-full"></span> 
+                        <ion-icon name="people" class="text-orange-yellow-crayola text-xl"></ion-icon>
+                        <span data-en="Organizational Experience">Pengalaman Organisasi & Kepanitiaan</span>
                     </h3>
                     
                     <div class="space-y-4">
                         
                          <div class="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-green-500/30 transition-all">
                             <div class="flex justify-between items-start mb-2">
-                                <h5 class="text-white font-bold text-sm">Bendahara Umum - KSPM UTY</h5>
+                                <h5 class="text-white font-bold text-sm" data-en="General Treasurer - KSPM UTY">Bendahara Umum - KSPM UTY</h5>
                                 <span class="px-2 py-0.5 rounded text-[10px] bg-green-500/20 text-green-300 border border-green-500/30">Finance</span>
                             </div>
-                            <p class="text-gray-300 text-xs leading-relaxed text-justify">
-                                Bertanggung jawab penuh atas pengelolaan arus kas organisasi, menyusun laporan pertanggungjawaban keuangan yang transparan, serta merancang anggaran efisien untuk setiap kegiatan.
+                            <p class="text-gray-300 text-xs leading-relaxed text-justify" data-en="Fully responsible for organizational cash flow management, preparing transparent financial accountability reports, and designing efficient budgets.">
+                                Bertanggung jawab penuh atas pengelolaan arus kas organisasi, menyusun laporan pertanggungjawaban keuangan yang transparan, serta merancang anggaran efisien untuk setiap kegiatan maupun program kerja KSPM UTY.
                             </p>
                         </div>
 
                         <div class="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-orange-500/30 transition-all">
                             <div class="flex justify-between items-start mb-2">
-                                <h5 class="text-white font-bold text-sm">Ketua & Koordinator Acara</h5>
+                                <h5 class="text-white font-bold text-sm" data-en="Chairman & Event Coordinator">Ketua & Koordinator Acara</h5>
                                 <span class="px-2 py-0.5 rounded text-[10px] bg-orange-500/20 text-orange-300 border border-orange-500/30">Leadership</span>
                             </div>
-                            <ul class="list-disc list-outside ml-4 text-gray-300 text-xs space-y-2 leading-relaxed text-justify">
-                                <li>
-                                    <strong>Koordinator Acara Seminar Nasional Pasar Modal (5 Feb 2024):</strong> Sukses menghadirkan 3 narasumber dari Jakarta & Yogyakarta dengan total <strong>854 peserta</strong> (280 offline, 574 online).
+                            
+                            <ul class="space-y-3 text-gray-300 text-xs leading-relaxed text-justify mt-2">
+                                <li class="flex items-start gap-3">
+                                    <ion-icon name="checkmark-circle" class="text-orange-400 text-lg shrink-0 mt-0.5"></ion-icon>
+                                    <span data-en="<strong>Industrial Visit Chairman (July 2024):</strong> Led the planning and execution of visits to major companies.">
+                                        <strong>Ketua Panitia Kunjungan Industri (Juli 2024):</strong> <br> Memimpin perencanaan dan eksekusi kegiatan kunjungan ke perusahaan besar.    
+                                    </span>
                                 </li>
-                                <li>
-                                    <strong>Ketua Panitia Kunjungan Industri:</strong> Memimpin perencanaan dan eksekusi kegiatan kunjungan ke perusahaan besar.
+                                <li class="flex items-start gap-3">
+                                     <ion-icon name="checkmark-circle" class="text-orange-400 text-lg shrink-0 mt-0.5"></ion-icon>
+                                     <span data-en="<strong>Capital Market School Coord. (June 2024)</strong> at IDX Yogyakarta & Person in Charge for 'Sinau Trading Bareng'.">
+                                        <strong>Koord. Sekolah Pasar Modal (Juni 2024)</strong> di BEI Yogyakarta & Penanggung Jawab kegiatan <em>Sinau Trading Bareng</em>.
+                                     </span>
                                 </li>
-                                <li>
-                                    <strong>Koordinator Sekolah Pasar Modal</strong> di BEI Yogyakarta & Penanggung Jawab kegiatan <em>Sinau Trading Bareng</em>.
+                                <li class="flex items-start gap-3">
+                                     <ion-icon name="checkmark-circle" class="text-orange-400 text-lg shrink-0 mt-0.5"></ion-icon>
+                                     <span data-en="<strong>National Seminar Event Coord. (Feb 2024):</strong> Successfully presented 3 speakers with total 854 participants.">
+                                        <strong>Koord. Acara Seminar Nasional Pasar Modal (Februari 2024):</strong> <br>Sukses menghadirkan 3 narasumber dari Jakarta & Yogyakarta dengan total <strong>854 peserta</strong> (280 offline, 574 online).
+                                     </span>
                                 </li>
                             </ul>
                         </div>
@@ -371,15 +382,30 @@ export const aboutContent = `
                 </div>
 
                 <div>
-                     <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">Hard & Soft Skills</h3>
+                     <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3 border-l-4 border-purple-500 pl-3 flex items-center gap-2">
+                        <ion-icon name="hardware-chip-outline" class="text-lg text-purple-400"></ion-icon> 
+                        Hard & Soft Skills
+                     </h3>
                      <div class="flex flex-wrap gap-2">
-                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Microsoft Office (Word, Excel, PPT)</span>
-                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Google Workspace</span>
-                         <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium">Digital Platforms</span>
-                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Adaptif & Komunikatif</span>
-                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Teamwork</span>
-                         <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola">Integritas Tinggi</span>
-                         <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-white">Public Speaking</span>
+                         <span class="group flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 font-medium hover:bg-blue-500/30 transition-all cursor-default">
+                             <ion-icon name="logo-microsoft" class="text-lg"></ion-icon> MS Office (Word, Excel, PPT)
+                         </span>
+                         
+                         <span class="group flex items-center gap-2 px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-lg text-xs text-green-400 font-medium hover:bg-green-500/30 transition-all cursor-default">
+                             <ion-icon name="logo-google" class="text-lg"></ion-icon> Google Workspace
+                         </span>
+                         
+                         <span class="group flex items-center gap-2 px-3 py-1.5 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-yellow-crayola font-medium hover:bg-orange-500/30 transition-all cursor-default">
+                             <ion-icon name="chatbubbles-outline" class="text-lg"></ion-icon> <span data-en="Adaptive & Communicative">Adaptif & Komunikatif</span>
+                         </span>
+                         
+                         <span class="group flex items-center gap-2 px-3 py-1.5 bg-teal-500/10 border border-teal-500/20 rounded-lg text-xs text-teal-400 font-medium hover:bg-teal-500/30 transition-all cursor-default">
+                             <ion-icon name="people-outline" class="text-lg"></ion-icon> Teamwork
+                         </span>
+                         
+                         <span class="group flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-lg text-xs text-purple-400 font-medium hover:bg-purple-500/30 transition-all cursor-default">
+                             <ion-icon name="shield-checkmark-outline" class="text-lg"></ion-icon> <span data-en="High Integrity">Integritas Tinggi</span>
+                         </span>
                      </div>
                 </div>
                 
@@ -390,3 +416,12 @@ export const aboutContent = `
     </div>
 </div>
 `;
+
+const createEnVer = (htmlString) => {
+    const parser = document.createElement('div');
+    parser.innerHTML = htmlString;
+    parser.querySelectorAll('[data-en]').forEach(el => { el.innerHTML = el.getAttribute('data-en'); });
+    return parser.innerHTML;
+};
+
+export const aboutContent = { id: contentOriginal, en: createEnVer(contentOriginal) };

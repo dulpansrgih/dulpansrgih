@@ -135,60 +135,116 @@
         </div>
 
         <button class="info_more-btn absolute -top-[15px] -right-[15px] rounded-bl-[15px] text-[12px] text-orange-yellow-crayola bg-border-gradient-onyx p-[10px] shadow-2 transition-all duration-200 z-[1] hover:bg-gradient-yellow-1 md:-top-[30px] md:-right-[30px] md:px-[15px] xl:hidden group" data-sidebar-btn>
-          <span class="hidden md:block md:text-[10px]">Show Contacts</span>
+          <span class="hidden md:block md:text-[10px]" data-en="Show Contacts">Show Contacts</span>
           <ion-icon name="chevron-down" class="md:hidden"></ion-icon>
         </button>
       </div>
 
       <div class="sidebar-info_more opacity-0 invisible transition-all duration-500 xl:opacity-100 xl:visible">
-        <div class="separator w-full h-[1px] bg-jet my-[16px] md:my-[32px] xl:last-of-type:opacity-0 xl:last-of-type:my-[15px]"></div>
-        <ul class="contacts-list grid grid-cols-1 gap-[16px] xl:grid-cols-1">
-          <li class="contact-item min-w-full flex items-center gap-[16px]">
-            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
-              <ion-icon name="mail-outline"></ion-icon><div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
-            </div>
-            <div class="contact-info w-[calc(100%-46px)]">
-              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Email</p>
-              <a href="mailto:dulpansmanagement.offc@gmail.com" class="text-white-2 text-[12px] font-light xl:text-[12px]">dulpansmanagement.offc@gmail.com</a>
-            </div>
-          </li>
-          <li class="contact-item min-w-full flex items-center gap-[16px]">
-            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
-              <ion-icon name="phone-portrait-outline"></ion-icon><div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
-            </div>
-            <div class="contact-info w-[calc(100%-46px)]">
-              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Phone</p>
-              <a href="tel:+6285229592941" class="text-white-2 text-[12px] font-light xl:text-[12px]">+62 85229592941</a>
-            </div>
-          </li>
-           <li class="contact-item min-w-full flex items-center gap-[16px]">
-            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
-              <ion-icon name="location-outline"></ion-icon><div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
-            </div>
-            <div class="contact-info w-[calc(100%-46px)]">
-              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Location</p>
-              <address class="text-white-2 text-[12px] font-light not-italic xl:text-[12px]">Daerah Istimewa Yogyakarta</address>
-            </div>
-          </li>
-          <li class="contact-item min-w-full flex items-center gap-[16px]">
-            <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
-               <div class="blink w-[10px] h-[10px] rounded-full bg-[rgb(218,205,37)] opacity-25 animate-blink relative after:content-[''] after:absolute after:inset-0 after:border-2 after:border-white after:rounded-full"></div>
-               <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
-            </div>
-             <div class="contact-info w-[calc(100%-46px)]">
-              <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Availability</p>
-              <time class="text-[12px] font-light xl:text-[12px]" style="color: #ffda6b;">Available to work!</time>
-            </div>
-          </li>
-        </ul>
-         <div class="separator w-full h-[1px] bg-jet my-[16px] md:my-[32px] xl:last-of-type:opacity-0 xl:last-of-type:my-[15px]"></div>
-         <ul class="social-list flex justify-start items-center gap-[15px] pb-[4px] pl-[7px] xl:justify-center">
-          <li class="social-item"><a href="https://www.dulpanadisaragih.my.id/" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="person-circle-outline"></ion-icon></a></li>
-          <li class="social-item"><a href="https://www.instagram.com/dulpansrgih_/" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="logo-instagram"></ion-icon></a></li>
-          <li class="social-item"><a href="https://linkedin.openinapp.co/dulpansrgih" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-          <li class="social-item"><a href="https://www.dothebest.my.id/" class="social-link text-light-gray-70 text-[18px] hover:text-light-gray"><ion-icon name="bag-outline"></ion-icon></a></li>
-        </ul>
-      </div>
+    
+    <div class="separator w-full h-[1px] bg-jet my-[16px] md:my-[32px] xl:last-of-type:opacity-0 xl:last-of-type:my-[15px]"></div>
+    
+    <ul class="contacts-list grid grid-cols-1 gap-[16px] xl:grid-cols-1">
+      
+      <li class="contact-item min-w-full flex items-center gap-[16px] group">
+        <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px] group-hover:text-yellow-400 transition-colors duration-300">
+          <ion-icon name="mail-outline"></ion-icon>
+          <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+        </div>
+        <div class="contact-info w-[calc(100%-46px)]">
+          <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Email</p>
+          <a href="mailto:dulpansmanagement.offc@gmail.com" class="text-white-2 text-[12px] font-light xl:text-[12px] hover:text-yellow-400 transition-colors duration-300">
+            hallo@gmail.com
+          </a>
+        </div>
+      </li>
+
+      <li class="contact-item min-w-full flex items-center gap-[16px] group">
+        <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px] group-hover:text-blue-400 transition-colors duration-300">
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+        </div>
+        <div class="contact-info w-[calc(100%-46px)]">
+          <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">LinkedIn</p>
+          <a href="https://www.linkedin.com/in/dulpansrgih/" target="_blank" class="text-white-2 text-[12px] font-light xl:text-[12px] hover:text-blue-400 transition-colors duration-300">
+            Dulpan Adi Saragih
+          </a>
+        </div>
+      </li>
+
+      <li class="contact-item min-w-full flex items-center gap-[16px] group">
+        <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px] group-hover:text-[#E1306C] transition-colors duration-300">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+        </div>
+        <div class="contact-info w-[calc(100%-46px)]">
+          <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]">Instagram</p>
+          <a href="https://www.instagram.com/dulpansrgih_/" target="_blank" class="text-white-2 text-[12px] font-light xl:text-[12px] hover:text-[#E1306C] transition-colors duration-300">
+            @dulpansrgih_
+          </a>
+        </div>
+      </li>
+
+      <li class="contact-item min-w-full flex items-center gap-[16px]">
+        <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
+          <ion-icon name="location-outline"></ion-icon>
+          <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+        </div>
+        <div class="contact-info w-[calc(100%-46px)]">
+          <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]" data-en="Location">Location</p>
+          <address class="text-white-2 text-[12px] font-light not-italic xl:text-[12px]">Yogyakarta, Indonesia</address>
+        </div>
+      </li>
+
+      <li class="contact-item min-w-full flex items-center gap-[16px]">
+        <div class="icon-box relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-1 z-[1] md:w-[48px] md:h-[48px]">
+           <div class="blink w-[10px] h-[10px] rounded-full bg-[rgb(218,205,37)] opacity-25 animate-blink relative after:content-[''] after:absolute after:inset-0 after:border-2 after:border-white after:rounded-full"></div>
+           <div class="absolute inset-[1px] bg-eerie-black-1 rounded-[inherit] -z-[1]"></div>
+        </div>
+         <div class="contact-info w-[calc(100%-46px)]">
+          <p class="contact-title text-light-gray-70 text-[10px] uppercase mb-[2px]" data-en="Availability">Availability</p>
+          <time class="text-[12px] font-light xl:text-[12px]" style="color: #ffda6b;" data-en="Available to work!">Available to work!</time>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="separator w-full h-[1px] bg-jet my-[16px] md:my-[32px] xl:last-of-type:opacity-0 xl:last-of-type:my-[15px]"></div>
+
+    <ul class="social-list flex justify-start items-center gap-[15px] pb-[4px] pl-[7px] xl:justify-center">
+      <li class="social-item">
+        <a href="https://www.dulpanadisaragih.my.id/" class="social-link text-light-gray-70 text-[18px] transition-all duration-300 hover:text-white hover:scale-125 block" title="Personal Site">
+            <ion-icon name="id-card-outline"></ion-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a href="https://www.dullora.my.id/" target="_blank" class="social-link text-light-gray-70 text-[18px] transition-all duration-300 hover:text-orange-yellow-crayola hover:scale-125 block" title="Store">
+            <ion-icon name="bag-outline"></ion-icon>
+        </a>
+      </li>
+      <li class="social-item ml-auto">
+          <div class="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 hover:bg-white/10 transition-colors group cursor-pointer shadow-sm">
+              
+              <ion-icon name="globe-outline" class="text-orange-yellow-crayola text-[14px] group-hover:rotate-12 transition-transform"></ion-icon>
+
+              <div class="flex items-center gap-1">
+                  <button onclick="window.setLanguage('id')" 
+                          class="lang-btn text-[10px] font-bold transition-colors duration-300 hover:text-orange-yellow-crayola active" 
+                          data-lang="id">
+                      ID
+                  </button>
+                  <span class="text-white/20 text-[10px]">|</span>
+                  <button onclick="window.setLanguage('en')" 
+                          class="lang-btn text-[10px] font-bold text-gray-500 transition-colors duration-300 hover:text-orange-yellow-crayola" 
+                          data-lang="en">
+                      EN
+                  </button>
+              </div>
+          </div>
+      </li>
+    </ul>
+</div>
+
     </aside>
     
     <div id="sticky-header" class="fixed top-0 left-0 w-full z-[60] bg-[#1e1e24]/80 backdrop-blur-xl border-b border-white/5 px-6 py-3 transform -translate-y-[150%] transition-all duration-500 ease-in-out lg:hidden flex items-center justify-between shadow-2xl opacity-0">
@@ -226,14 +282,14 @@
           <li class="navbar-item w-[20%] text-center lg:w-auto">
             <button class="navbar-link active flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="about">
               <ion-icon name="person-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
-              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">About</span>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]" data-en="About">About</span>
             </button>
           </li>
 
           <li class="navbar-item w-[20%] text-center lg:w-auto">
             <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="experience">
               <ion-icon name="briefcase-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
-              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">Experience</span>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]" data-en="Experience">Experience</span>
             </button>
           </li>
 
@@ -262,7 +318,7 @@
                 </ion-icon>
               </div>
 
-              <span class="hidden lg:block">Certificated</span>
+              <span class="hidden lg:block" data-en="Certificate">Certificate</span>
               
               <span class="lg:hidden text-[9px] font-bold text-white opacity-0 group-[.active]:opacity-100 transition-opacity duration-300 translate-y-3 drop-shadow-md"></span>
             </button>
@@ -271,20 +327,20 @@
           <li class="navbar-item w-[20%] text-center lg:w-auto">
             <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="education">
               <ion-icon name="school-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
-              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">Education</span>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]" data-en="Education">Education</span>
             </button>
           </li>
 
           <li class="navbar-item w-[20%] text-center lg:w-auto">
             <button class="navbar-link flex flex-col items-center justify-end w-full h-full text-light-gray transition-colors duration-200 hover:text-light-gray-70 [&.active]:text-orange-yellow-crayola gap-1 lg:p-[20px_7px] lg:text-[13px] lg:font-medium" data-nav-link="myskill">
               <ion-icon name="construct-outline" class="text-[20px] mb-1 lg:hidden"></ion-icon>
-              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]">My Skill</span>
+              <span class="text-[7px] tracking-tight font-medium lg:text-[13px]" data-en="Skills">MySkills</span>
             </button>
           </li>
 
           <li class="navbar-item hidden lg:block lg:w-auto">
              <button class="navbar-link nav-cv-special" data-nav-link="cv">
-                <span>CV Preview</span>
+                <span>Curriculum Vitae</span>
                 <ion-icon name="document-text-outline" class="cv-icon-desktop"></ion-icon>
              </button>
           </li>

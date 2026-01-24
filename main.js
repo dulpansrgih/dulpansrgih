@@ -21,110 +21,163 @@ const routes = {
 const mainContent = document.getElementById('main-content');
 const navLinks = document.querySelectorAll('[data-nav-link]');
 
-// Variabel Global untuk menyimpan halaman aktif saat ini
+// State Global
 let currentPage = 'about';
+let currentLang = localStorage.getItem('appLang') || 'id'; // Simpan pilihan bahasa user
 
 // =========================================
-// 2. CORE ENGINE (Page Loader)
+// 2. LANGUAGE ENGINE
+// =========================================
+
+// Fungsi Global untuk ganti bahasa (dipanggil dari HTML)
+window.setLanguage = function(lang) {
+    if (lang !== 'id' && lang !== 'en') return;
+    
+    currentLang = lang;
+    localStorage.setItem('appLang', lang); // Simpan ke memory browser
+    
+    // Update UI Tombol Bahasa
+    updateLanguageButtons();
+    
+    // Terjemahkan elemen statis
+    translateStaticElements();
+    
+    // Reload halaman yang sedang aktif dengan bahasa baru
+    loadPage(currentPage);
+}
+
+function updateLanguageButtons() {
+    const btns = document.querySelectorAll('.lang-btn');
+    btns.forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+            btn.classList.add('text-white', 'active');
+            btn.classList.remove('text-gray-500');
+        } else {
+            btn.classList.remove('text-white', 'active');
+            btn.classList.add('text-gray-500');
+        }
+    });
+}
+
+function translateStaticElements() {
+    const staticElements = document.querySelectorAll('[data-en]');
+    
+    staticElements.forEach(el => {
+        // --- LOGIKA PENGECUALIAN ---
+        // Cek apakah elemen berada di dalam Sidebar, Navbar, atau Sticky Header
+        const inSidebar = el.closest('.sidebar');
+        const inNavbar = el.closest('.navbar');
+        const inStickyHeader = el.closest('#sticky-header');
+
+        // Jika elemen ada di salah satu area tersebut, JANGAN diterjemahkan.
+        // Biarkan sesuai default HTML (Dwibahasa Default).
+        if (inSidebar || inNavbar || inStickyHeader) {
+            return; 
+        }
+        // -------------------------------------
+
+        // Jika belum ada data-id (teks asli), simpan dulu
+        if (!el.dataset.id) el.dataset.id = el.innerHTML;
+        
+        // Ganti teks berdasarkan bahasa
+        if (currentLang === 'en') {
+            el.innerHTML = el.dataset.en;
+        } else {
+            el.innerHTML = el.dataset.id;
+        }
+    });
+}
+
+// =========================================
+// 3. CORE ENGINE (Page Loader)
 // =========================================
 
 window.loadPage = function(pageName) {
-    currentPage = pageName; // Update state halaman aktif
+    currentPage = pageName;
 
-    // A. Inject HTML ke Main Content
-    if (routes[pageName]) {
-        mainContent.innerHTML = routes[pageName];
+    // A. Content Resolver (Pilih Bahasa)
+    let contentData = routes[pageName] || routes['about'];
+    let finalHTML = '';
+
+    // Cek apakah konten berupa Object (Support Multi Bahasa) atau String biasa
+    if (typeof contentData === 'object' && contentData !== null) {
+        // Ambil bahasa yang diminta, kalau kosong fallback ke ID
+        finalHTML = contentData[currentLang] || contentData['id']; 
     } else {
-        mainContent.innerHTML = routes['about'];
+        // Jika file route belum di-update (masih string biasa), tampilkan apa adanya
+        finalHTML = contentData; 
     }
+
+    // B. Inject HTML
+    mainContent.innerHTML = finalHTML;
     
     window.scrollTo(0, 0);
 
-    // B. Re-assign CSS variable for icons
+    // C. Re-assign CSS variable for icons
     document.querySelectorAll('.work-item').forEach(item => {
         const iconPath = item.getAttribute('data-icon');
         if (iconPath) item.style.setProperty('--icon-image', `url(${iconPath})`);
     });
 
-    // C. Cek status header sticky
+    // D. Sticky Header Check
     checkStickyHeader();
 
-    // D. Inisialisasi Logic per Halaman
+    // E. Initialize Page Logic
     if (pageName === 'certificate' || pageName === 'cv') {
         initCertificateLogic(); 
-        
-        // --- LOGIC RESPONSIVE: Mobile CV Tab ---
         if (pageName === 'cv' && window.innerWidth < 1024) {
-            mainContent.innerHTML = routes['certificate'];
-            currentPage = 'certificate'; // State jadi certificate karena base-nya di situ
+            // Logic khusus CV di mobile
+            window.loadPage('certificate'); 
             setTimeout(() => {
                 if(window.cert && window.cert.switchTab) window.cert.switchTab('resume'); 
             }, 50);
+            return; 
         }
     }
 
     if (pageName === 'more') {
-        setTimeout(() => {
-            initMoreLogic();
-        }, 10);
+        setTimeout(() => { initMoreLogic(); }, 10);
     }
 
-    // E. Update State Navigasi
+    // F. Update Navigasi & Bahasa UI
     updateNavigationState(pageName);
+    updateLanguageButtons();
+    translateStaticElements(); // Pastikan elemen statis tetap terupdate saat pindah halaman
 }
 
-// Fungsi Update Navigasi Terpisah agar bisa dipanggil ulang
 function updateNavigationState(pageName) {
     navLinks.forEach(nav => {
         const navTarget = nav.getAttribute('data-nav-link');
         let isActive = (navTarget === pageName);
 
-        // Kasus Khusus: Jika di halaman MORE (Desktop), aktifkan menu Certificate
         if (pageName === 'more' && window.innerWidth >= 1024) {
             if (navTarget === 'certificate') isActive = true;
         }
 
-        // Kasus Khusus: Jika di halaman CERTIFICATE tapi tab RESUME aktif (Mobile), mungkin perlu highlighting khusus?
-        // Untuk saat ini standar saja.
-
-        if(isActive) {
-            nav.classList.add('active');
-        } else {
-            nav.classList.remove('active');
-        }
+        if(isActive) nav.classList.add('active');
+        else nav.classList.remove('active');
     });
 }
 
 // =========================================
-// 3. RESPONSIVE SYNC (AUTO SWITCH)
+// 4. RESPONSIVE SYNC
 // =========================================
 window.addEventListener('resize', () => {
     const isDesktop = window.innerWidth >= 1024;
     
-    // A. Mobile (Resume Tab) --> Desktop (CV Page)
-    // Jika kita di halaman certificate dan tab yang aktif adalah 'resume', saat layar membesar pindah ke page 'cv'
-    if (isDesktop && currentPage === 'certificate') {
-        if (window.cert && window.cert.activeTab === 'resume') {
-            window.loadPage('cv');
-        }
+    if (isDesktop && currentPage === 'certificate' && window.cert && window.cert.activeTab === 'resume') {
+        window.loadPage('cv');
     }
 
-    // B. Desktop (CV Page) --> Mobile (Certificate Page -> Resume Tab)
-    // Jika kita di halaman 'cv' saat layar mengecil, pindah ke 'certificate' dan buka tab 'resume'
     if (!isDesktop && currentPage === 'cv') {
         window.loadPage('certificate');
-        setTimeout(() => {
-             if(window.cert) window.cert.switchTab('resume');
-        }, 50);
+        setTimeout(() => { if(window.cert) window.cert.switchTab('resume'); }, 50);
     }
-    
-    // Update navigasi jika layout berubah (terutama untuk kasus 'more')
     updateNavigationState(currentPage);
 });
 
-
 // =========================================
-// 4. UI LOGIC & HELPERS
+// 5. UI LOGIC & HELPERS
 // =========================================
 function checkStickyHeader() {
     const stickyHeader = document.getElementById('sticky-header');
@@ -168,8 +221,14 @@ document.addEventListener('click', function(e) {
     
     const navBtn = e.target.closest('[data-nav-link]');
     if (navBtn) {
-        const targetPage = navBtn.getAttribute('data-nav-link');
-        loadPage(targetPage);
+        loadPage(navBtn.getAttribute('data-nav-link'));
+        
+        // --- LOGIKA BARU: TUTUP SIDEBAR SAAT NAVIGASI DIKLIK ---
+        const sidebar = document.querySelector('[data-sidebar]');
+        if(sidebar && sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+        // -------------------------------------------------------
     }
     
     const sidebarBtn = e.target.closest('[data-sidebar-btn]');
@@ -186,10 +245,17 @@ document.addEventListener('click', function(e) {
         if (detailEl) {
             detailEl.classList.toggle('hidden');
             if (detailEl.classList.contains('hidden')) {
-                if (btnTextSpan) btnTextSpan.innerText = btnTextSpan.innerText.replace('Hide', 'Show');
+                if (btnTextSpan) {
+                     // Cek bahasa saat ini untuk teks tombol
+                     const isEn = localStorage.getItem('appLang') === 'en';
+                     btnTextSpan.innerText = btnTextSpan.innerText.replace(isEn ? 'Hide' : 'Sembunyikan', isEn ? 'Show' : 'Lihat');
+                }
                 detailBtn.classList.remove('active');
             } else {
-                if (btnTextSpan) btnTextSpan.innerText = btnTextSpan.innerText.replace('Show', 'Hide');
+                if (btnTextSpan) {
+                    const isEn = localStorage.getItem('appLang') === 'en';
+                    btnTextSpan.innerText = btnTextSpan.innerText.replace(isEn ? 'Show' : 'Lihat', isEn ? 'Hide' : 'Sembunyikan');
+                }
                 detailBtn.classList.add('active');
             }
         }
